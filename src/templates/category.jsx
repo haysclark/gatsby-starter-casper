@@ -3,22 +3,23 @@ import Helmet from "react-helmet";
 import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
 
-export default class CategoryTemplate extends React.Component {
+class CategoryTemplate extends React.Component {
   render() {
     const category = this.props.pathContext.category;
     const postEdges = this.props.data.allMarkdownRemark.edges;
+    const authorsEdges = this.props.data.authors.edges;
     return (
       <div className="category-container">
         <Helmet
           title={`Posts in category "${category}" | ${config.siteTitle}`}
         />
-        <PostListing postEdges={postEdges} />
+        <PostListing postEdges={postEdges} postAuthors={authorsEdges} />
       </div>
     );
   }
 }
 
-/* eslint no-undef: "off"*/
+/* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query CategoryPage($category: String) {
     allMarkdownRemark(
@@ -43,5 +44,19 @@ export const pageQuery = graphql`
         }
       }
     }
+    # authors
+    authors: allAuthorsJson {
+      edges {
+        node {
+          id
+          name
+          image
+          url
+          bio
+        }
+      }
+    }
   }
 `;
+
+export default CategoryTemplate;

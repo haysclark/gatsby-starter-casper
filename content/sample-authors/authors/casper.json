@@ -1,0 +1,13 @@
+{
+  "id": "casper",
+  "name": "Casper User",
+  "image": "https://api.adorable.io/avatars/150/test.png",
+  "url": "http://gatsbyjs.org/",
+  "location": "North Pole, Earth",
+  "bio": "Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people.",
+  "socialUrls": [
+    "https://github.com/gatsbyjs",
+    "https://twitter.com/gatsbyjs",
+    "mailto:gatsbyjs@example.com"
+  ]
+}

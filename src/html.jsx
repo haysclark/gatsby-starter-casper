@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === "production") {
     /* eslint import/no-webpack-loader-syntax: off */
     inlinedStyles = require("!raw-loader!../public/styles.css");
   } catch (e) {
-    /* eslint no-console: "off"*/
+    /* eslint no-console: "off" */
     console.log(e);
   }
 }
@@ -34,6 +34,21 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+
+          {/* Mobile Meta */}
+          <meta name="HandheldFriendly" content="True" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+
+          {/* Styles'n'Scripts */}
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400"
+          />
+
           {this.props.headComponents}
           <link rel="shortcut icon" href={favicon} />
           {css}

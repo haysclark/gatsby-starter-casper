@@ -1,0 +1,83 @@
+
+.page-description {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.5em;
+    font-weight: 400;
+    font-family: "Merriweather", serif;
+    letter-spacing: 0.01rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.no-cover .page-description {
+    color: rgba(0,0,0,0.5);
+}
+
+/* Add subtle load-in animation for content on the home page */
+.home-template .page-description {
+    -webkit-animation: fade-in-down 0.9s;
+    animation: fade-in-down 0.9s both;
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+
+/* ==========================================================================
+      Media Queries - Smaller than 900px
+   ========================================================================== */
+
+@media only screen and (max-width: 900px) {
+
+    .page-description {
+        font-size: 1.8rem;
+        line-height: 1.5em;
+    }
+
+}
+
+/* ==========================================================================
+       Media Queries - Smaller than 500px
+   ========================================================================== */
+
+@media only screen and (max-width: 500px) {
+
+    .page-description {
+        font-size: 1.6rem;
+    }
+
+    .paged .main-header .page-description {
+        display: none;
+    }
+
+}
+
+
+/* ==========================================================================
+   14. Animations
+   ========================================================================== */
+
+/* Used to fade in title/desc on the home page */
+@-webkit-keyframes fade-in-down {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-down {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}

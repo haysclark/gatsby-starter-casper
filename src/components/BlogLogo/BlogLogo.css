@@ -1,0 +1,45 @@
+/* Appears in the top left corner of your home page */
+.blog-logo {
+    display: block;
+    float: left;
+    background: none !important; /* Makes sure there is never a background */
+    border: none !important; /* Makes sure there is never a border */
+}
+
+.blog-logo img {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    height: 38px;
+    padding: 1px 0 5px 0;
+    width: auto;
+}
+
+/* ==========================================================================
+       Media Queries - Smaller than 900px
+   ========================================================================== */
+
+@media only screen and (max-width: 900px) {
+
+    .blog-logo img {
+        padding: 4px 0;
+    }
+
+}
+
+/* ==========================================================================
+       Media Queries - Smaller than 500px
+   ========================================================================== */
+
+@media only screen and (max-width: 500px) {
+
+    .blog-logo {
+        padding: 5px;
+    }
+
+    .blog-logo img {
+        height: 30px;
+    }
+
+}

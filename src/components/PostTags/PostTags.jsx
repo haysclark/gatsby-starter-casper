@@ -1,26 +1,27 @@
 import React, { Component } from "react";
 import _ from "lodash";
 import Link from "gatsby-link";
+import "./PostTags.css";
 
 class PostTags extends Component {
   render() {
-    const { tags } = this.props;
-    return (
-      <div className="post-tag-container">
-        {tags &&
-          tags.map(tag =>
-            <Link
-              key={tag}
-              style={{ textDecoration: "none" }}
-              to={`/tags/${_.kebabCase(tag)}`}
-            >
-              <button>
+    const { prefix, tags } = this.props;
+    if (tags) {
+      return (
+        <span>
+          {prefix}
+          {tags.map((tag, index, arr) => (
+            <span key={tag}>
+              <Link key={tag} to={`/tags/${_.kebabCase(tag)}`}>
                 {tag}
-              </button>
-            </Link>
-          )}
-      </div>
-    );
+              </Link>
+              {index !== arr.length - 1 ? ", " : ""}
+            </span>
+          ))}
+        </span>
+      );
+    }
+    return null;
   }
 }
 

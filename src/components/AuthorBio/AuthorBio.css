@@ -1,0 +1,20 @@
+.author-bio {
+    font-size: 1.8rem;
+    line-height: 1.5em;
+    font-weight: 200;
+    color: #50585D;
+    letter-spacing: 0;
+    text-indent: 0;
+}
+
+/* ==========================================================================
+       Media Queries - Smaller than 900px
+   ========================================================================== */
+
+@media only screen and (max-width: 900px) {
+
+    .author-profile .author-bio {
+        font-size: 1.6rem;
+    }
+
+}

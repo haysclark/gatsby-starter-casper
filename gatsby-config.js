@@ -12,8 +12,9 @@ module.exports = {
       title: config.siteTitle,
       description: config.siteDescription,
       image_url: `${config.siteUrl + pathPrefix}/logos/logo-512.png`,
-      author: config.userName,
-      copyright: config.copyright
+      author: config.siteRssAuthor,
+      copyright: `${config.copyright.label} © ${config.copyright.year ||
+        new Date().getFullYear()}`
     }
   },
   plugins: [
@@ -25,6 +26,14 @@ module.exports = {
         path: `${__dirname}/content/${config.blogPostDir}`
       }
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "authors",
+        path: `${__dirname}/content/${config.blogAuthorDir}`
+      }
+    },
+    "gatsby-transformer-json",
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -91,7 +100,7 @@ module.exports = {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
           ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = "GatsbyJS Material Starter";
+          ret.generator = "GatsbyJS Casper Starter";
           return ret;
         },
         query: `
@@ -144,6 +153,7 @@ module.exports = {
                       date
                       category
                       tags
+                      author
                     }
                   }
                 }

@@ -1,0 +1,186 @@
+/* Every post, on every page, gets this style on its <article> tag */
+.post {
+    position: relative;
+    width: 80%;
+    max-width: 710px;
+    margin: 4rem auto;
+    padding-bottom: 4rem;
+    border-bottom: #EBF2F6 1px solid;
+    word-wrap: break-word;
+}
+
+/* Add a little circle in the middle of the border-bottom on our .post
+   just for the lolz and stylepoints. */
+.post:after {
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: #E7EEF2 1px solid;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: #FFF;
+    border-radius: 100%;
+    box-shadow: #FFF 0 0 0 5px;
+}
+
+.post-title a {
+    text-decoration: none;
+}
+
+/* Possibly not the right home for this, make sure to move sized versions as well */
+h1:not(.post-template) .post-title {
+    font-size: 3.6rem;
+}
+
+div.page-template .post-title {
+    font-size: 5rem;
+}
+
+.post-template .post-title,
+.page-template .post-title {
+    margin-bottom: 0;
+}
+
+.post-excerpt p {
+    margin: 0;
+    font-size: 0.9em;
+    line-height: 1.7em;
+}
+
+.read-more {
+    text-decoration: none;
+}
+
+.post-meta {
+    display: block;
+    margin: 1.75rem 0 0 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    color: #9EABB3;
+}
+
+.post-meta a {
+    color: #9EABB3;
+    text-decoration: none;
+}
+
+.post-meta a:hover {
+    color: #9EABB3;
+    text-decoration: underline;
+}
+
+.post-template .post-meta,
+.page-template .post-meta {
+    margin: 0;
+}
+
+.post-template .post-date,
+.page-template .post-date {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+/* Keep images centered, and allow images wider than the main
+   text column to break out. */
+.post-content img {
+    display: block;
+    max-width: 126%;
+    height: auto;
+    padding: 0.6em 0;
+    /* Centers an image by (1) pushing its left edge to the
+       center of its container and (2) shifting the entire image
+       in the opposite direction by half its own width.
+       Works for images that are larger than their containers. */
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%); /* for Safari and iOS */
+    -ms-transform: translateX(-50%); /* for IE9 */
+    transform: translateX(-50%);
+}
+
+/* Tweak the .post wrapper style */
+.post-template .post,
+.page-template .post {
+    margin-top: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Kill that stylish little circle that was on the border, too */
+.post-template .post:after,
+.page-template .post:after {
+    display: none;
+}
+
+
+/* ==========================================================================
+       Media Queries - Smaller than 900px
+   ========================================================================== */
+
+@media only screen and (max-width: 900px) {
+
+    .post {
+        font-size: 0.95em
+    }
+
+    h1:not(.post-template) .post-title {
+        font-size: 3.2rem;
+    }
+
+    div.page-template .post-title {
+        font-size: 4.5rem;
+    }
+
+}
+
+/* ==========================================================================
+       Media Queries - Smaller than 500px
+   ========================================================================== */
+
+@media only screen and (max-width: 500px) {
+
+    .post {
+        width: auto;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        margin-left: 16px;
+        margin-right: 16px;
+        padding-bottom: 2rem;
+        line-height: 1.65em;
+    }
+
+    h1:not(.post-template) .post-title {
+        font-size: 2.5rem;
+    }
+
+    div.page-template .post-title {
+        font-size: 2.8rem;
+    }
+
+    .post-template .post-date,
+    .page-template .post-date {
+        display: inline-block;
+    }
+
+    .post-excerpt p {
+        font-size: 0.85em;
+    }
+
+    .post-meta {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
+
+    .post-content img {
+        padding: 0;
+        width: calc(100% + 32px); /* expand with to image + margins */
+        min-width: 0;
+        max-width: 112%; /* fallback when calc doesn't work */
+    }
+
+}

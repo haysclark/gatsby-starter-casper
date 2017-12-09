@@ -1,0 +1,112 @@
+.menu-button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    float: right;
+    height: 38px;
+    padding: 0 15px;
+    border-style: solid;
+    border-width: 1px;
+    opacity: 1;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 35px;
+    white-space: nowrap;
+    border-radius: 3px;
+    transition: all 0.5s ease;
+}
+
+.menu-button:before {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 6px;
+    position: relative;
+    top: 1px;
+}
+
+.menu-button:hover {
+    background: #fff;
+}
+
+.menu-button:focus {
+    outline: 0;
+}
+
+/* When the navigation is closed */
+.nav-closed .menu-button {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.nav-closed .menu-button:hover {
+    color: #222;
+}
+
+/* When the navigation is closed and there is no cover image */
+.nav-closed .no-cover .menu-button {
+    border-color: #BFC8CD;
+    color: #9EABB3;
+}
+
+.nav-closed .no-cover .menu-button:hover {
+    border-color: #555;
+    color: #555;
+}
+
+/* When the navigation is opened */
+.nav-opened .menu-button {
+    padding: 0 12px;
+    background: #111;
+    border-color: #111;
+    color: #fff;
+    -webkit-transform: translate3D(94px, 0, 0);
+    -ms-transform: translate3D(94px, 0, 0);
+    transform: translate3D(94px, 0, 0);
+    transition: all 0.3s ease;
+}
+
+.nav-opened .menu-button .word {
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.icon-menu:before {
+    content: "\f609";
+}
+
+/* ==========================================================================
+      Media Queries - Smaller than 500px
+   ========================================================================== */
+
+@media only screen and (max-width: 500px) {
+
+    .menu-button {
+        padding: 0 5px;
+        border-radius: 0;
+        border-width: 0;
+        color: #2e2e2e;
+        background: transparent;
+    }
+
+    .menu-button:hover {
+        color: #2e2e2e;
+        border-color: transparent;
+        background: none;
+    }
+
+    .nav-opened .menu-button {
+        background: none;
+        border: transparent;
+    }
+
+    .no-cover .main-nav.overlay .menu-button {
+        border: none;
+    }
+
+    .main-nav.overlay .menu-button {
+        border-color: transparent;
+    }
+
+}

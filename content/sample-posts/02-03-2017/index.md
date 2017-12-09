@@ -1,6 +1,6 @@
 ---
 title: "Random project 4 With Super Long Title Phase One"
-cover: "https://unsplash.it/1152/300/?random?SuperLong"
+cover: "https://unsplash.it/1280/300/?random?SuperLong"
 category: "random"
 date: "02/03/2017"
 tags:

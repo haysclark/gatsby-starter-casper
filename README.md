@@ -1,18 +1,17 @@
-[![Code Climate](https://codeclimate.com/github/Vagr9K/gatsby-advanced-starter/badges/gpa.svg)](https://codeclimate.com/github/Vagr9K/gatsby-advanced-starter)
-[![Issue Count](https://codeclimate.com/github/Vagr9K/gatsby-advanced-starter/badges/issue_count.svg)](https://codeclimate.com/github/Vagr9K/gatsby-advanced-starter)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/990fb54ea8094f2aa0ed77f14e859820)](https://www.codacy.com/app/Vagr9K/gatsby-advanced-starter?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Vagr9K/gatsby-advanced-starter&amp;utm_campaign=Badge_Grade)
+[![Code Climate](https://codeclimate.com/github/haysclark/gatsby-starter-casper/badges/gpa.svg)](https://codeclimate.com/github/haysclark/gatsby-starter-casper)
+[![Issue Count](https://codeclimate.com/github/haysclark/gatsby-starter-casper/badges/issue_count.svg)](https://codeclimate.com/github/haysclark/gatsby-starter-casper)
 
 <div align="center">
     <img src="static/logos/logo-1024.png" alt="Logo" width='200px' height='200px'/>
 </div>
 
-# Gatsby Advanced Starter
+# Gatsby Casper Starter
 
-A blog starter skeleton with advanced features for [Gatsby](https://github.com/gatsbyjs/gatsby/).
+A blog starter skeleton with advanced features for [Gatsby](https://github.com/gatsbyjs/gatsby/) utilizing the [Casper Theme (v1.4)](https://github.com/TryGhost/Casper/tree/1.4) for [Ghost](https://ghost.io/).
 
 ## Why?
 
-This project aims to provide a minimal for building GatsbyJS powered blogs.
+This project aims to provide a minimal for building GatsbyJS powered blogs which a rather popular theme which has been ported to various platforms.
 
 It doesn't define any UI limitations in any way, and only gives you the basic components for SEO/Social Media/etc.
 
@@ -26,7 +25,7 @@ If you are a newcomer to Gatsby who's interested in the implementations of most 
 
 If you are interested in a foundation for building ultra-fast websites, you can use this project as a "minimal" starter.
 
-[Demo website.](https://vagr9k.github.io/gatsby-advanced-starter/)
+[Demo website.](https://haysclark.github.io/gatsby-starter-casper/)
 
 ## Features
 
@@ -47,16 +46,19 @@ If you are interested in a foundation for building ultra-fast websites, you can 
   * Code syntax highlighting
   * Embed YouTube videos
   * Embed Tweets
+  * Pages support pagination
+  * Read More linked paginated pages  
 * Tags
   * Separate page for posts under each tag
-* Categories
+  * Pages support pagination.
+* Categories (pages generated but not linked in theme)
   * Separate page for posts under each category
-* Disqus support
+* Disqus support (needs to be uncommented)
   * Notifications about new disqus comments
 * Google Analytics support
 * NPM scripts for GitHub Pages deployment
-* Social features
-  * Twitter tweet button
+* Social features (uncomment code to use)
+  * Twitter tweet button 
   * Facebook share/share count
   * Reddit share/share count
   * Google+ share button
@@ -88,7 +90,7 @@ NOTE: Feel free to check out [Gatsby Material Starter](https://github.com/Vagr9K
 Install this starter (assuming [Gatsby](https://github.com/gatsbyjs/gatsby/) is installed) by running from your CLI:
 
 ```sh
-gatsby new YourProjectName https://github.com/Vagr9K/gatsby-advanced-starter
+gatsby new YourProjectName https://github.com/haysclark/gatsby-starter-casper
 npm install # or yarn install
 npm run develop # or gatsby develop
 ```
@@ -98,7 +100,7 @@ Or you can fork the project, make your changes there and merge new features when
 Alternatively:
 
 ```sh
-git clone https://github.com/Vagr9K/gatsby-advanced-starter YourProjectName # Clone the project
+git clone https://github.com/haysclark/gatsby-starter-casper YourProjectName # Clone the project
 cd YourProjectname
 rm -rf .git # So you can have your own changes stored in VCS.
 npm install # or yarn install
@@ -110,52 +112,65 @@ npm run develop # or gatsby develop
  Edit the export object in `data/SiteConfig`:
 
  ```js
-module.exports = {
-  blogPostDir: 'sample-posts', // The name of directory that contains your posts.
-  siteTitle: 'Gatsby Advanced Starter', // Site title.
-  siteTitleAlt: 'GatsbyJS Advanced Starter', // Alternative site title for SEO.
-  siteLogo: '/logos/logo-1024.png', // Logo used for SEO and manifest.
-  siteUrl: 'https://vagr9k.github.io', // Domain of your website without pathPrefix.
-  pathPrefix: '/gatsby-advanced-starter', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
-  siteDescription: 'A blog starter skeleton with advanced features for for GatsbyJS', // Website description used for RSS feeds/meta description tag.
-  siteRss: '/rss.xml', // Path to the RSS file.
-  siteFBAppID: '1825356251115265', // FB Application ID for using app insights
-  disqusShortname: 'https-vagr9k-github-io-gatsby-advanced-starter', // Disqus shortname.
-  postDefaultCategoryID: 'Tech', // Default category for posts.
-  userName: 'Advanced User', // Username to display in the author segment.
-  userTwitter: '', // Optionally renders "Follow Me" in the UserInfo segment.
-  userLocation: 'North Pole, Earth', // User location to display in the author segment.
-  userAvatar: 'https://api.adorable.io/avatars/150/test.png', // User avatar to display in the author segment.
-  userDescription: "Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people.", // User description to display in the author segment.
-  // Links to social profiles/projects you want to display in the author segment/navigation bar.
-  userLinks: [
-    {
-      label: 'GitHub',
-      url: 'https://github.com/Vagr9K/gatsby-advanced-starter',
-      iconClassName: 'fa fa-github',
-    },
-    {
-      label: 'Twitter',
-      url: 'https://twitter.com/Vagr9K',
-      iconClassName: 'fa fa-twitter',
-    },
-    {
-      label: 'Email',
-      url: 'mailto:vagr9k@gmail.com',
-      iconClassName: 'fa fa-envelope',
-    },
-  ],
-  copyright: "Copyright © 2017. Advanced User", // Copyright string for the footer of the website and RSS feed.
-  themeColor: "#c62828", // Used for setting manifest and progress theme colors.
-  backgroundColor: "#e0e0e0" // Used for setting manifest background color.
-};
+ module.exports = {
+   blogPostDir: "sample-posts", // The name of directory that contains your posts.
+   blogAuthorDir: "sample-authors", // The name of directory that contains your authors.
+   blogAuthorId: "casper", // The default and fallback author ID used for blog posts without a defined author.
+   siteTitle: "Gatsby Casper Starter", // Site title.
+   siteTitleAlt: "GatsbyJS Casper Theme Starter", // Alternative site title for SEO.
+   siteLogo: "logos/logo-1024.png", // Logo used for SEO and manifest.
+   siteUrl: "https://haysclark.github.io", // Domain of your website without pathPrefix.
+   pathPrefix: "/gatsby-starter-casper", // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-casper/.
+   siteDescription:
+     "A Casper themed GatsbyJS stater based on the Advanced Stater.", // Website description used for RSS feeds/meta description tag.
+   siteCover: "images/blog-cover.jpg",
+   siteNavigation: true, // If navigation is enabled the Menu button will be visible
+   siteRss: "/rss.xml", // Path to the RSS file.
+   siteRssAuthor: "Casper User", // The author name used in the RSS file
+   // siteFBAppID: "1825356251115265", // optional, sets the FB Application ID for using app insights
+   sitePaginationLimit: 10, // The max number of posts per page.
+   googleAnalyticsID: "UA-111982167-1", // GA tracking ID.
+   siteSocialUrls: [
+     "https://github.com/haysclark/gatsby-starter-casper",
+     "https://twitter.com/gatsbyjs",
+     "mailto:gatsbyjs@example.com"
+   ],
+   postDefaultCategoryID: "Tech", // Default category for posts.
+   // Links to social profiles/projects you want to display in the navigation bar.
+   userLinks: [
+     {
+       label: "GitHub",
+       url: "https://github.com/haysclark/gatsby-starter-casper",
+       iconClassName: "fa fa-github" // Disabled, see Navigation.jsx
+     },
+     {
+       label: "Twitter",
+       url: "https://twitter.com/gatsbyjs",
+       iconClassName: "fa fa-twitter" // Disabled, see Navigation.jsx
+     },
+     {
+       label: "Email",
+       url: "mailto:gatsbyjs@example.com",
+       iconClassName: "fa fa-envelope" // Disabled, see Navigation.jsx
+     }
+   ],
+   // Copyright string for the footer of the website and RSS feed.
+   copyright: {
+     label: "Gatsby Casper Starter" // label used before the year
+     // year: "2018" // optional, set specific copyright year or range of years, defaults to current year
+     // url: "https://www.gatsbyjs.org/" // optional, set link address of copyright, defaults to site root
+   },
+   themeColor: "#c62828", // Used for setting manifest and progress theme colors.
+   backgroundColor: "#e0e0e0", // Used for setting manifest background color.
+   promoteGatsby: true // Enables the GatsbyJS promotion information in footer.
+ };
  ```
 
  You can also optionally set `pathPrefix`:
  ```js
  module.exports = {
   // Note: it must *not* have a trailing slash.
-       pathPrefix: '/gatsby-advanced-starter', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
+       pathPrefix: '/gatsby-starter-casper', // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-casper/.
 }
 
  ```

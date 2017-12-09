@@ -1,41 +1,52 @@
 module.exports = {
   blogPostDir: "sample-posts", // The name of directory that contains your posts.
-  siteTitle: "Gatsby Advanced Starter", // Site title.
-  siteTitleAlt: "GatsbyJS Advanced Starter", // Alternative site title for SEO.
-  siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
-  siteUrl: "https://vagr9k.github.io", // Domain of your website without pathPrefix.
-  pathPrefix: "/gatsby-advanced-starter", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
-  siteDescription: "A GatsbyJS stater with Advanced design in mind.", // Website description used for RSS feeds/meta description tag.
+  blogAuthorDir: "sample-authors", // The name of directory that contains your authors.
+  blogAuthorId: "casper", // The default and fallback author ID used for blog posts without a defined author.
+  siteTitle: "Gatsby Casper Starter", // Site title.
+  siteTitleAlt: "GatsbyJS Casper Theme Starter", // Alternative site title for SEO.
+  siteLogo: "https://raw.githubusercontent.com/gatsbyjs/gatsby/master/www/static/android-chrome-512x512.png", // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
+  siteUrl: "https://haysclark.github.io", // Domain of your website without pathPrefix.
+  pathPrefix: "/gatsby-starter-casper", // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-casper/.
+  siteDescription:
+    "A Casper themed GatsbyJS stater based on the Advanced Starter.", // Website description used for RSS feeds/meta description tag.
+  siteCover: "https://unsplash.it/1280/500/?random?gatsby-starter-casper", // optional, the cover image used in header for home page. e.g: "/images/blog-cover.jpg",
+  siteNavigation: true, // If navigation is enabled the Menu button will be visible
   siteRss: "/rss.xml", // Path to the RSS file.
-  siteFBAppID: "1825356251115265", // FB Application ID for using app insights
-  googleAnalyticsID: "UA-47311644-5", // GA tracking ID.
-  disqusShortname: "https-vagr9k-github-io-gatsby-advanced-starter", // Disqus shortname.
+  siteRssAuthor: "Casper User", // The author name used in the RSS file
+  // siteFBAppID: "1825356251115265", // optional, sets the FB Application ID for using app insights
+  sitePaginationLimit: 10, // The max number of posts per page.
+  googleAnalyticsID: "UA-111982167-1", // GA tracking ID.
+  siteSocialUrls: [
+    "https://github.com/haysclark/gatsby-starter-casper",
+    "https://twitter.com/gatsbyjs",
+    "mailto:gatsbyjs@example.com"
+  ],
   postDefaultCategoryID: "Tech", // Default category for posts.
-  userName: "Advanced User", // Username to display in the author segment.
-  userTwitter: "", // Optionally renders "Follow Me" in the UserInfo segment.
-  userLocation: "North Pole, Earth", // User location to display in the author segment.
-  userAvatar: "https://api.adorable.io/avatars/150/test.png", // User avatar to display in the author segment.
-  userDescription:
-    "Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people.", // User description to display in the author segment.
-  // Links to social profiles/projects you want to display in the author segment/navigation bar.
+  // Links to social profiles/projects you want to display in the navigation bar.
   userLinks: [
     {
       label: "GitHub",
-      url: "https://github.com/Vagr9K/gatsby-advanced-starter",
-      iconClassName: "fa fa-github"
+      url: "https://github.com/haysclark/gatsby-starter-casper",
+      iconClassName: "fa fa-github" // Disabled, see Navigation.jsx
     },
     {
       label: "Twitter",
-      url: "https://twitter.com/Vagr9K",
-      iconClassName: "fa fa-twitter"
+      url: "https://twitter.com/gatsbyjs",
+      iconClassName: "fa fa-twitter" // Disabled, see Navigation.jsx
     },
     {
       label: "Email",
-      url: "mailto:vagr9k@gmail.com",
-      iconClassName: "fa fa-envelope"
+      url: "mailto:gatsbyjs@example.com",
+      iconClassName: "fa fa-envelope" // Disabled, see Navigation.jsx
     }
   ],
-  copyright: "Copyright © 2017. Advanced User", // Copyright string for the footer of the website and RSS feed.
+  // Copyright string for the footer of the website and RSS feed.
+  copyright: {
+    label: "Gatsby Casper Starter" // label used before the year
+    // year: "2018" // optional, set specific copyright year or range of years, defaults to current year
+    // url: "https://www.gatsbyjs.org/" // optional, set link address of copyright, defaults to site root
+  },
   themeColor: "#c62828", // Used for setting manifest and progress theme colors.
-  backgroundColor: "#e0e0e0" // Used for setting manifest background color.
+  backgroundColor: "#e0e0e0", // Used for setting manifest background color.
+  promoteGatsby: true // Enables the GatsbyJS promotion information in footer.
 };

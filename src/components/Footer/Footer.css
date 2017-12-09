@@ -1,25 +1,55 @@
-.footer {
-    justify-content: center;
-    align-content: center;
-    padding: 10px 5px 5px;
+
+/* ==========================================================================
+       Footer - The bottom of every page
+   ========================================================================== */
+
+.site-footer {
+    position: relative;
+    margin: 8rem 0 0 0;
+    padding: 1rem 15px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.75em;
+    color: #BBC7CC;
 }
 
-.notice-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
-    margin-top: 25px;
+.site-footer a {
+    color: #BBC7CC;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-@media (max-width: 640px - 1px) {
-    .notice-container {
-        justify-content: space-around;
+.site-footer a:hover {
+    color: #BBC7CC;
+    border-bottom: #bbc7cc 1px solid;
+}
+
+.poweredby {
+    display: block;
+    width: 45%;
+    float: right;
+    text-align: right;
+}
+
+.copyright {
+    display: block;
+    width: 45%;
+    float: left;
+}
+
+/* ==========================================================================
+   13. Media Queries - Smaller than 500px
+   ========================================================================== */
+
+@media only screen and (max-width: 500px) {
+
+    .site-footer {
+        margin-top: 3rem;
     }
-}
 
-.notice-container h4 {
-    text-align: center;
-    margin: 0;
+    .post-template .site-footer,
+    .page-template .site-footer {
+        margin-top: 0;
+    }
+
 }

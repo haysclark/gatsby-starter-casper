@@ -1,0 +1,207 @@
+/* Navigation */
+.nav-opened .nav-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 240px;
+    bottom: 0;
+    z-index: 10;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    width: 240px;
+    opacity: 0;
+    background: #111;
+    margin-bottom: 0;
+    text-align: left;
+    overflow-y: auto;
+    -webkit-transition: -webkit-transform 0.5s ease,
+    opacity 0.3s ease 0.7s;
+    transition: transform 0.5s ease,
+    opacity 0.3s ease 0.7s;
+}
+
+.nav-closed .nav {
+    -webkit-transform: translate3D(97px, 0, 0);
+    -ms-transform: translate3D(97px, 0, 0);
+    transform: translate3D(97px, 0, 0);
+}
+
+.nav-opened .nav {
+    opacity: 1;
+    -webkit-transition: -webkit-transform 0.3s ease,
+    opacity 0s ease 0s;
+    transition: transform 0.3s ease,
+    opacity 0s ease 0s;
+    -webkit-transform: translate3D(0, 0, 0);
+    -ms-transform: translate3D(0, 0, 0);
+    transform: translate3D(0, 0, 0);
+}
+
+.nav-title {
+    position: absolute;
+    top: 45px;
+    left: 30px;
+    font-size: 16px;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.nav-close {
+    position: absolute;
+    top: 38px;
+    right: 25px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    font-size: 10px;
+}
+
+.nav-close:focus {
+    outline: 0;
+}
+
+.nav-close:before,
+.nav-close:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 1px;
+    background: rgb(150,150,150);
+    top: 15px;
+    -webkit-transition: background 0.15s ease;
+    transition: background 0.15s ease;
+}
+
+.nav-close:before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.nav-close:after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.nav-close:hover:before,
+.nav-close:hover:after {
+    background: rgb(255,255,255);
+}
+
+.nav ul {
+    padding: 90px 9% 5%;
+    list-style: none;
+    counter-reset: item;
+}
+
+.nav li:before {
+    display: block;
+    float: right;
+    padding-right: 4%;
+    padding-left: 5px;
+    text-align: right;
+    font-size: 1.2rem;
+    vertical-align: bottom;
+    color: #B8B8B8;
+    content: counter(item, lower-roman);
+    counter-increment: item;
+}
+.nav li {
+    margin: 0;
+}
+.nav li a {
+    text-decoration: none;
+    line-height: 1.4;
+    font-size: 1.4rem;
+    display: block;
+    padding: 0.6rem 4%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.nav li a:after {
+    display: inline-block;
+    content: " .......................................................";
+    color: rgba(255,255,255,0.2);
+    margin-left: 5px;
+}
+.nav .nav-current:before {
+    color: #fff;
+}
+.nav .nav-current a:after {
+    content: " ";
+    border-bottom: rgba(255,255,255,0.5) 1px solid;
+    width: 100%;
+    height: 1px;
+}
+
+.nav a:link,
+.nav a:visited {
+    color: #B8B8B8;
+}
+
+.nav li.nav-current a,
+.nav a:hover,
+.nav a:active,
+.nav a:focus {
+    color: #fff;
+}
+
+.subscribe-button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    height: 38px;
+    padding: 0 20px;
+    color: #111 !important; /* Overides `.nav a:link, .nav a:visited` colour */
+    text-align: center;
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 35px;
+    border-radius: 3px;
+    background: #fff;
+    transition: all ease 0.3s;
+}
+
+.subscribe-button:before {
+    font-size: 9px;
+    margin-right: 6px;
+}
+
+/* ==========================================================================
+      Media Queries - Smaller than 500px
+   ========================================================================== */
+
+@media only screen and (max-width: 500px) {
+
+    .nav-title {
+        top: 25px;
+
+    }
+
+    .nav-close {
+        position: absolute;
+        top: 18px;
+    }
+
+    .nav ul {
+        padding: 60px 9% 5%;
+    }
+
+}
