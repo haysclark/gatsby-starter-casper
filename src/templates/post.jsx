@@ -23,6 +23,24 @@ import PostTags from "../components/PostTags/PostTags";
 import Footer from "../components/Footer/Footer";
 import AuthorModel from "../models/author-model";
 
+function parsePost(post, slug) {
+  const result = post;
+  if (!result.id) {
+    result.id = slug;
+  }
+  if (!result.id) {
+    result.category_id = config.postDefaultCategoryID;
+  }
+  return result;
+}
+
+const formatReadNext = value => ({
+  path: value.fields.slug,
+  title: value.frontmatter.title,
+  cover: value.frontmatter.cover,
+  excerpt: value.excerpt
+});
+
 class PostTemplate extends React.Component {
   state = {
     menuOpen: false
@@ -54,13 +72,7 @@ class PostTemplate extends React.Component {
     const { location, data } = this.props;
     const { slug, next, prev } = this.props.pathContext;
     const postNode = this.props.data.markdownRemark;
-    const post = postNode.frontmatter;
-    if (!post.id) {
-      post.id = slug;
-    }
-    if (!post.id) {
-      post.category_id = config.postDefaultCategoryID;
-    }
+    const post = parsePost(postNode.frontmatter, slug);
     const { cover, title, date, author, tags } = post;
     const className = post.post_class ? post.post_class : "post";
     const authorData = AuthorModel.getAuthor(
@@ -68,15 +80,9 @@ class PostTemplate extends React.Component {
       author,
       config.blogAuthorId
     );
-
-    const formatReadNext = value => ({
-      path: value.fields.slug,
-      title: value.frontmatter.title,
-      cover: value.frontmatter.cover,
-      excerpt: value.excerpt
-    });
     const getNextData = () => (next ? formatReadNext(data.next) : null);
     const getPrevData = () => (prev ? formatReadNext(data.prev) : null);
+
     return (
       <Drawer className="post-template" isOpen={this.state.menuOpen}>
         <Helmet>

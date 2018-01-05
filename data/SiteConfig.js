@@ -5,12 +5,13 @@ module.exports = {
   siteTitle: "Gatsby Casper Starter", // Site title.
   siteTitleAlt: "GatsbyJS Casper Theme Starter", // Alternative site title for SEO.
   siteLogo:
-    "https://raw.githubusercontent.com/gatsbyjs/gatsby/master/www/static/android-chrome-512x512.png", // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
+    "https://haysclark.github.io/gatsby-starter-casper/logos/logo-1024.png", // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
   siteUrl: "https://haysclark.github.io", // Domain of your website without pathPrefix.
   pathPrefix: "/gatsby-starter-casper", // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-casper/.
   siteDescription:
     "A Casper themed GatsbyJS stater based on the Advanced Starter.", // Website description used for RSS feeds/meta description tag.
-  siteCover: "https://unsplash.it/1280/500/?random?gatsby-starter-casper", // Optional, the cover image used in header for home page. e.g: "/images/blog-cover.jpg",
+  siteCover:
+    "https://haysclark.github.io/gatsby-starter-casper/images/blog-cover.jpg", // Optional, the cover image used in header for home page. e.g: "/images/blog-cover.jpg",
   siteNavigation: true, // If navigation is enabled the Menu button will be visible
   siteRss: "/rss.xml", // Path to the RSS file.
   siteRssAuthor: "Casper User", // The author name used in the RSS file

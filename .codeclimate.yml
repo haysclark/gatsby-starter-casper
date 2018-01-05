@@ -1,9 +1,10 @@
 version: "2"
+
 checks:
   method-lines:
     enabled: false
 
-engines:
+plugins:
   eslint:
     enabled: true
   stylelint:
@@ -15,11 +16,5 @@ engines:
         javascript:
           mass_threshold: 70
 
-ratings:
-   paths:
-    - "**.js"
-    - "**.jsx"
-    - "**.css"
-
-exclude_paths:
+exclude_patterns:
 - static/**/*
