@@ -5,13 +5,13 @@ import "./PostShare.css";
 const formatSiteUrl = (siteUrl, pathPrefix, path) =>
   siteUrl + (pathPrefix === "/" ? "" : pathPrefix) + path;
 
-const getCover = post => {
-  const { cover } = post;
-  if (cover && cover.childImageSharp && cover.childImageSharp.original) {
-    return cover.childImageSharp.original.src;
-  }
-  return "";
-};
+// const getCover = post => {
+//   const { cover } = post;
+//   if (cover && cover.childImageSharp && cover.childImageSharp.original) {
+//     return cover.childImageSharp.original.src;
+//   }
+//   return "";
+// };
 
 class PostShare extends React.Component {
   render() {

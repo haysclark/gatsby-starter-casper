@@ -1,7 +1,7 @@
 const path = require("path");
 const _ = require("lodash");
 const webpackLodashPlugin = require("lodash-webpack-plugin");
-const config = require("./data/SiteConfig");
+const siteConfig = require("./data/SiteConfig");
 const {
   createPaginationPages,
   createLinkedPages
@@ -85,7 +85,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           createPage,
           edges: result.data.allMarkdownRemark.edges,
           component: indexPage,
-          limit: config.sitePaginationLimit
+          limit: siteConfig.sitePaginationLimit
         });
 
         // Creates Posts
@@ -106,7 +106,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         const tagMap = new Map();
         const categorySet = new Set();
         const authorSet = new Set();
-        authorSet.add(config.blogAuthorId);
+        authorSet.add(siteConfig.blogAuthorId);
 
         result.data.allMarkdownRemark.edges.forEach(edge => {
           if (edge.node.frontmatter.tags) {
@@ -138,7 +138,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             edges: tagMap.get(tag),
             component: tagPage,
             pathFormatter: tagFormatter(tag),
-            limit: config.sitePaginationLimit,
+            limit: siteConfig.sitePaginationLimit,
             context: {
               tag
             }

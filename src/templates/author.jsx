@@ -92,10 +92,10 @@ class AuthorTemplate extends React.Component {
           {/* PostListing component renders all the posts */}
           <PostListing postEdges={postEdges} postAuthors={authorsEdges} />
 
-          {/*Social information here*/}
+          {/* Social information here */}
           <SocialMediaIcons urls={getAuthor().socialUrls} />
 
-          {/*The tiny footer at the very bottom*/}
+          {/* The tiny footer at the very bottom */}
           <Footer
             copyright={config.copyright}
             promoteGatsby={config.promoteGatsby}
@@ -106,7 +106,7 @@ class AuthorTemplate extends React.Component {
   }
 }
 
-/* eslint no-undef: "off"*/
+/* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query AuthorPage($author: String) {
     allMarkdownRemark(

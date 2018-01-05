@@ -69,11 +69,11 @@ class PostTemplate extends React.Component {
       config.blogAuthorId
     );
 
-    const formatReadNext = data => ({
-      path: data.fields.slug,
-      title: data.frontmatter.title,
-      cover: data.frontmatter.cover,
-      excerpt: data.excerpt
+    const formatReadNext = value => ({
+      path: value.fields.slug,
+      title: value.frontmatter.title,
+      cover: value.frontmatter.cover,
+      excerpt: value.excerpt
     });
     const getNextData = () => (next ? formatReadNext(data.next) : null);
     const getPrevData = () => (prev ? formatReadNext(data.prev) : null);
@@ -126,7 +126,7 @@ class PostTemplate extends React.Component {
           </MainContent>
           <ReadNext next={getNextData()} prev={getPrevData()} />
 
-          {/*The tiny footer at the very bottom*/}
+          {/* The tiny footer at the very bottom */}
           <Footer
             copyright={config.copyright}
             promoteGatsby={config.promoteGatsby}
@@ -137,7 +137,7 @@ class PostTemplate extends React.Component {
   }
 }
 
-/* eslint no-undef: "off"*/
+/* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!, $next: String, $prev: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {

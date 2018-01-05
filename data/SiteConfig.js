@@ -4,12 +4,13 @@ module.exports = {
   blogAuthorId: "casper", // The default and fallback author ID used for blog posts without a defined author.
   siteTitle: "Gatsby Casper Starter", // Site title.
   siteTitleAlt: "GatsbyJS Casper Theme Starter", // Alternative site title for SEO.
-  siteLogo: "https://raw.githubusercontent.com/gatsbyjs/gatsby/master/www/static/android-chrome-512x512.png", // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
+  siteLogo:
+    "https://raw.githubusercontent.com/gatsbyjs/gatsby/master/www/static/android-chrome-512x512.png", // Logo used for SEO and manifest. e.g. "/logos/logo-1024.png",
   siteUrl: "https://haysclark.github.io", // Domain of your website without pathPrefix.
   pathPrefix: "/gatsby-starter-casper", // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-casper/.
   siteDescription:
     "A Casper themed GatsbyJS stater based on the Advanced Starter.", // Website description used for RSS feeds/meta description tag.
-  siteCover: "https://unsplash.it/1280/500/?random?gatsby-starter-casper", // optional, the cover image used in header for home page. e.g: "/images/blog-cover.jpg",
+  siteCover: "https://unsplash.it/1280/500/?random?gatsby-starter-casper", // Optional, the cover image used in header for home page. e.g: "/images/blog-cover.jpg",
   siteNavigation: true, // If navigation is enabled the Menu button will be visible
   siteRss: "/rss.xml", // Path to the RSS file.
   siteRssAuthor: "Casper User", // The author name used in the RSS file
@@ -42,7 +43,7 @@ module.exports = {
   ],
   // Copyright string for the footer of the website and RSS feed.
   copyright: {
-    label: "Gatsby Casper Starter" // label used before the year
+    label: "Gatsby Casper Starter" // Label used before the year
     // year: "2018" // optional, set specific copyright year or range of years, defaults to current year
     // url: "https://www.gatsbyjs.org/" // optional, set link address of copyright, defaults to site root
   },

@@ -62,9 +62,9 @@ class TagTemplate extends React.Component {
         <SiteWrapper>
           {/* All the main content gets inserted here */}
           <div className="tag-template">
-            {/*The big featured header*/}
+            {/* The big featured header */}
             <MainHeader className="tag-head" cover={tag.featureImage}>
-              <MainNav className="clearfix" overlay={true}>
+              <MainNav className="clearfix" overlay>
                 <BlogLogo logo={config.siteLogo} title={config.siteTitle} />
                 <MenuButton
                   navigation={config.siteNavigation}
@@ -75,11 +75,7 @@ class TagTemplate extends React.Component {
                 <div className="main-header-content inner">
                   <PageTitle text={tag} />
                   <PageDescription
-                    text={
-                      tag.description
-                        ? tag.description
-                        : `A ${total}-post collection`
-                    }
+                    text={tag.description || `A ${total}-post collection`}
                   />
                 </div>
               </div>
@@ -97,7 +93,7 @@ class TagTemplate extends React.Component {
               <PostListing postEdges={nodes} postAuthors={authorsEdges} />
             </PaginatedContent>
           </div>
-          {/*The tiny footer at the very bottom*/}
+          {/* The tiny footer at the very bottom */}
           <Footer
             copyright={config.copyright}
             promoteGatsby={config.promoteGatsby}
@@ -108,7 +104,7 @@ class TagTemplate extends React.Component {
   }
 }
 
-/* eslint no-undef: "off"*/
+/* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query TagPage($tag: String) {
     allMarkdownRemark(

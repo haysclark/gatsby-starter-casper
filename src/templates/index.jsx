@@ -67,7 +67,7 @@ class IndexTemplate extends React.Component {
         <SiteWrapper>
           {/* All the main content gets inserted here */}
           <div className="home-template">
-            {/*The big featured header*/}
+            {/* The big featured header */}
             <MainHeader cover={config.siteCover}>
               <MainNav overlay={config.siteCover}>
                 <BlogLogo logo={config.siteLogo} title={config.siteTitle} />
@@ -90,8 +90,8 @@ class IndexTemplate extends React.Component {
                 className="scroll-down icon-arrow-left"
                 to="content"
                 data-offset="-45"
-                spy={true}
-                smooth={true}
+                spy
+                smooth
                 duration={500}
               >
                 <span className="hidden">Scroll Down</span>
@@ -111,7 +111,7 @@ class IndexTemplate extends React.Component {
             </PaginatedContent>
           </div>
 
-          {/*The tiny footer at the very bottom*/}
+          {/* The tiny footer at the very bottom */}
           <Footer
             copyright={config.copyright}
             promoteGatsby={config.promoteGatsby}
@@ -122,7 +122,7 @@ class IndexTemplate extends React.Component {
   }
 }
 
-/* eslint no-undef: "off"*/
+/* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
