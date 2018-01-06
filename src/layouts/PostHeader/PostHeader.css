@@ -8,10 +8,8 @@
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
-
     .post-template .post-header,
     .page-template .post-header {
         margin-bottom: 2rem;
     }
-
 }

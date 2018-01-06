@@ -13,19 +13,22 @@
     font-size: 1.8rem;
     display: inline-block;
     margin: 1rem 1.6rem 1.6rem 0;
-    color: #BBC7CC;
+    color: #bbc7cc;
     text-decoration: none;
 }
 
 .post-footer .share .icon-twitter:hover {
     color: #55acee;
 }
+
 .post-footer .share .icon-facebook:hover {
     color: #3b5998;
 }
-/*.post-footer .share .icon-pinterest:hover {*/
-    /*color: #3b5998;*/
-/*}*/
+
+.post-footer .share .icon-pinterest:hover {
+    color: #3b5998;
+}
+
 .post-footer .share .icon-google-plus:hover {
     color: #dd4b39;
 }
@@ -35,14 +38,12 @@
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
-
     .post-footer .share {
         position: static;
         width: auto;
     }
 
     .post-footer .share a {
-        margin: 1.4rem 0.8rem 0 0.8rem;
+        margin: 1.4rem 0.8rem 0;
     }
-
 }

@@ -1,6 +1,6 @@
 /* The details of your blog. Defined in ghost/settings/ */
 .page-title {
-    margin: 10px 0 10px 0;
+    margin: 10px 0;
     font-size: 5rem;
     letter-spacing: -1px;
     font-weight: 700;
@@ -9,7 +9,7 @@
 }
 
 .no-cover .page-title {
-    color: rgba(0,0,0,0.8);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 /* Add subtle load-in animation for content on the home page */
@@ -25,27 +25,21 @@
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
-
     .page-title {
         font-size: 4rem;
         letter-spacing: -1px;
     }
-
 }
-
 
 /* ==========================================================================
    13. Media Queries - Smaller than 500px
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
-
     .page-title {
         font-size: 3rem;
     }
-
 }
-
 
 /* ==========================================================================
    14. Animations
@@ -58,6 +52,7 @@
         -webkit-transform: translateY(-10px);
         transform: translateY(-10px);
     }
+
     100% {
         opacity: 1;
         -webkit-transform: translateY(0);
@@ -71,6 +66,7 @@
         -webkit-transform: translateY(-10px);
         transform: translateY(-10px);
     }
+
     100% {
         opacity: 1;
         -webkit-transform: translateY(0);

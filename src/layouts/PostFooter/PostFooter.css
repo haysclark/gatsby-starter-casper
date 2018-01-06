@@ -1,9 +1,9 @@
 /* The author credit area after the post */
 .post-footer {
     position: relative;
-    margin: 6rem 0 0 0;
-    padding: 3rem 0 0 0;
-    border-top: #EBF2F6 1px solid;
+    margin: 6rem 0 0;
+    padding: 3rem 0 0;
+    border-top: #ebf2f6 1px solid;
 }
 
 .post-footer h4 {
@@ -31,10 +31,8 @@
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
-
     .post-footer {
-        padding: 5rem 0 3rem 0;
+        padding: 5rem 0 3rem;
         text-align: center;
     }
-
 }

@@ -1,26 +1,25 @@
-
 /* ==========================================================================
        Footer - The bottom of every page
    ========================================================================== */
 
 .site-footer {
     position: relative;
-    margin: 8rem 0 0 0;
+    margin: 8rem 0 0;
     padding: 1rem 15px;
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
     line-height: 1.75em;
-    color: #BBC7CC;
+    color: #bbc7cc;
 }
 
 .site-footer a {
-    color: #BBC7CC;
+    color: #bbc7cc;
     text-decoration: none;
     font-weight: bold;
 }
 
 .site-footer a:hover {
-    color: #BBC7CC;
+    color: #bbc7cc;
     border-bottom: #bbc7cc 1px solid;
 }
 
@@ -42,7 +41,6 @@
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
-
     .site-footer {
         margin-top: 3rem;
     }
@@ -51,5 +49,4 @@
     .page-template .site-footer {
         margin-top: 0;
     }
-
 }

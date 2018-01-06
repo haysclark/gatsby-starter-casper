@@ -5,12 +5,12 @@
     margin: 4rem auto;
     font-family: "Open Sans", sans-serif;
     font-size: 1.3rem;
-    color: #9EABB3;
+    color: #9eabb3;
     text-align: center;
 }
 
 .pagination a {
-    color: #9EABB3;
+    color: #9eabb3;
     transition: all 0.2s ease;
 }
 
@@ -51,7 +51,6 @@
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
-
     .pagination {
         width: auto;
         margin: 2rem auto;
@@ -66,5 +65,4 @@
         position: static;
         margin: 10px 0;
     }
-
 }

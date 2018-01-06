@@ -18,7 +18,7 @@
     transition: all 0.5s ease;
 }
 
-.menu-button:before {
+.menu-button::before {
     font-size: 12px;
     font-weight: bold;
     margin-right: 6px;
@@ -46,8 +46,8 @@
 
 /* When the navigation is closed and there is no cover image */
 .nav-closed .no-cover .menu-button {
-    border-color: #BFC8CD;
-    color: #9EABB3;
+    border-color: #bfc8cd;
+    color: #9eabb3;
 }
 
 .nav-closed .no-cover .menu-button:hover {
@@ -61,9 +61,9 @@
     background: #111;
     border-color: #111;
     color: #fff;
-    -webkit-transform: translate3D(94px, 0, 0);
-    -ms-transform: translate3D(94px, 0, 0);
-    transform: translate3D(94px, 0, 0);
+    -webkit-transform: translate3d(94px, 0, 0);
+    -ms-transform: translate3d(94px, 0, 0);
+    transform: translate3d(94px, 0, 0);
     transition: all 0.3s ease;
 }
 
@@ -72,7 +72,7 @@
     transition: all 0.3s ease;
 }
 
-.icon-menu:before {
+.icon-menu::before {
     content: "\f609";
 }
 
@@ -81,7 +81,6 @@
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
-
     .menu-button {
         padding: 0 5px;
         border-radius: 0;
@@ -108,5 +107,4 @@
     .main-nav.overlay .menu-button {
         border-color: transparent;
     }
-
 }

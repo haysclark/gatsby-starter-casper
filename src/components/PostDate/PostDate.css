@@ -13,9 +13,7 @@
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
-
     .post-date {
         display: none;
     }
-
 }

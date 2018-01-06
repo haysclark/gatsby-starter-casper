@@ -1,36 +1,33 @@
 .author-profile {
-    padding: 0 15px 5rem 15px;
-    border-bottom: #EBF2F6 1px solid;
+    padding: 0 15px 5rem;
+    border-bottom: #ebf2f6 1px solid;
     text-align: center;
 }
 
 /* Add a little circle in the middle of the border-bottom */
-.author-profile:after {
+.author-profile::after {
     display: block;
     content: "";
     width: 7px;
     height: 7px;
-    border: #E7EEF2 1px solid;
+    border: #e7eef2 1px solid;
     position: absolute;
     bottom: -5px;
     left: 50%;
     margin-left: -5px;
-    background: #FFF;
+    background: #fff;
     border-radius: 100%;
-    box-shadow: #FFF 0 0 0 5px;
+    box-shadow: #fff 0 0 0 5px;
 }
-
 
 /* ==========================================================================
        Media Queries - Smaller than 900px
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
-
     .author-profile {
         padding-bottom: 4rem;
     }
-
 }
 
 /* ==========================================================================
@@ -38,10 +35,8 @@
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
-
     .author-profile {
         padding-bottom: 2rem;
     }
-
 }
 

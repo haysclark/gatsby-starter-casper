@@ -6,12 +6,13 @@
     font-size: 1.4rem;
     line-height: 1;
     font-style: italic;
-    color: #9EABB3;
+    color: #9eabb3;
 }
 
 .author-meta a {
-    color: #9EABB3;
+    color: #9eabb3;
 }
+
 .author-meta a:hover {
     color: #111;
 }
@@ -27,11 +28,13 @@
     letter-spacing: 0.01rem;
     font-size: 1.7rem;
 }
+
 .author-meta span {
     display: inline-block;
     margin: 0 2rem 1rem 0;
     word-wrap: break-word;
 }
+
 .author-meta a {
     text-decoration: none;
 }
@@ -42,21 +45,19 @@
     display: none;
 }
 
-
 /* ==========================================================================
        Media Queries - Smaller than 900px
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
-
     .author-meta span {
         display: block;
         margin: 1.5rem 0;
     }
+
     .author-profile .author-meta span {
         font-size: 1.6rem;
     }
-
 }
 
 /* ==========================================================================
@@ -64,19 +65,17 @@
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
-
     .author-meta li {
         float: none;
         margin: 0;
         line-height: 1.75em;
     }
 
-    .author-meta li:before {
+    .author-meta li::before {
         display: none;
     }
 
     .author-profile .author-meta span {
         font-size: 1.4rem;
     }
-
 }
