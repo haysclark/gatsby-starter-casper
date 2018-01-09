@@ -3,22 +3,15 @@
     margin: 0;
 }
 
-.social-media-icon {
-    display: inline-block;
-    margin: 1.6rem 1rem 0;
-}
-
 .social-media-icons .social-svg {
     text-align: center;
 }
 
-.main-header .social-media-icons {
-    margin: 0;
-}
-
-.main-header .social-media-icon {
+.social-media-icon {
     display: inline-block;
-    margin: 1rem 1.6rem 1.6rem 0;
+    margin: 1.6rem 1rem 0;
+    width: 50px;
+    height: 50px;
 }
 
 /* Add subtle load-in animation for content on the home page */
@@ -36,4 +29,35 @@
 .main-header .social-media-icon .social-svg:hover {
     color: #bbc7cc;
     background: white;
+}
+
+.main-header .social-svg-icon {
+    width: 50px;
+    height: 50px;
+}
+
+/* ==========================================================================
+       Media Queries - Smaller than 900px
+   ========================================================================== */
+
+@media only screen and (max-width: 900px) {
+    .social-media-icon {
+        display: inline-block;
+        margin: 1.4rem 0.9rem 0;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ==========================================================================
+       Media Queries - Smaller than 500px
+   ========================================================================== */
+
+@media only screen and (max-width: 500px) {
+    .social-media-icon {
+        display: inline-block;
+        margin: 1.2rem 0.8rem 0;
+        width: 35px;
+        height: 35px;
+    }
 }

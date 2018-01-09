@@ -14,6 +14,7 @@ class SocialMediaIcons extends React.Component {
               className="social-media-icon"
               url={url}
               color={color}
+              style={{ height: null, width: null}}
             />
           ))}
         </div>
