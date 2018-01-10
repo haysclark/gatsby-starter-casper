@@ -85,25 +85,6 @@ div.page-template .post-title {
     border: none;
 }
 
-/* Keep images centered, and allow images wider than the main
-   text column to break out. */
-.post-content img {
-    display: block;
-    max-width: 126%;
-    height: auto;
-    padding: 0.6em 0;
-
-    /* Centers an image by (1) pushing its left edge to the
-       center of its container and (2) shifting the entire image
-       in the opposite direction by half its own width.
-       Works for images that are larger than their containers. */
-    position: relative;
-    left: 50%;
-    -webkit-transform: translateX(-50%); /* for Safari and iOS */
-    -ms-transform: translateX(-50%); /* for IE9 */
-    transform: translateX(-50%);
-}
-
 /* Tweak the .post wrapper style */
 .post-template .post,
 .page-template .post {
@@ -168,12 +149,5 @@ div.page-template .post-title {
     .post-meta {
         font-size: 1.3rem;
         margin-top: 1rem;
-    }
-
-    .post-content img {
-        padding: 0;
-        width: calc(100% + 32px); /* expand with to image + margins */
-        min-width: 0;
-        max-width: 112%; /* fallback when calc doesn't work */
     }
 }
