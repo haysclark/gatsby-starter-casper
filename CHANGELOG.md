@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.2...v1.0.3) (2018-01-10)
+
+
+### Bug Fixes
+
+* maximizing image width to 710px ([aca1a8f](https://github.com/haysclark/gatsby-starter-casper/commit/aca1a8f))
+* removing blog post image style conflict ([2e41fbe](https://github.com/haysclark/gatsby-starter-casper/commit/2e41fbe))
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.1...v1.0.2) (2018-01-09)
 
