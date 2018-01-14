@@ -18,8 +18,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       Object.prototype.hasOwnProperty.call(node.frontmatter, "slug")
     ) {
       slug = `/${_.kebabCase(node.frontmatter.slug)}`;
-    }
-    if (
+    } else if (
       Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
     ) {
