@@ -1,5 +1,6 @@
 const path = require("path");
 const _ = require("lodash");
+const fs = require("fs");
 const webpackLodashPlugin = require("lodash-webpack-plugin");
 const siteConfig = require("./data/SiteConfig");
 const {
@@ -43,6 +44,17 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     const tagPage = path.resolve("src/templates/tag.jsx");
     const categoryPage = path.resolve("src/templates/category.jsx");
     const authorPage = path.resolve("src/templates/author.jsx");
+
+    if (
+      !fs.existsSync(
+        path.resolve(`content/${siteConfig.blogAuthorDir}/authors/`)
+      )
+    ) {
+      reject(
+        "The 'authors' folder is missing within the 'blogAuthorDir' folder."
+      );
+    }
+
     resolve(
       graphql(
         `
