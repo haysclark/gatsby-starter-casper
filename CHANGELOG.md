@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.5"></a>
+## [1.0.5](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.4...v1.0.5) (2018-03-07)
+
+
+### Bug Fixes
+
+* adding basic validation for authors ([ff26e67](https://github.com/haysclark/gatsby-starter-casper/commit/ff26e67)), closes [#10](https://github.com/haysclark/gatsby-starter-casper/issues/10)
+* fixing sample-post dates and folder names ([2c46366](https://github.com/haysclark/gatsby-starter-casper/commit/2c46366))
+
+
+### Performance Improvements
+
+* removing dead GraphQL query ([b9d4133](https://github.com/haysclark/gatsby-starter-casper/commit/b9d4133))
+
+
+
 <a name="1.0.4"></a>
 ## [1.0.4](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.3...v1.0.4) (2018-03-07)
 
