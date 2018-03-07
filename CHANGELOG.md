@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.3...v1.0.4) (2018-03-07)
+
+
+### Bug Fixes
+
+* re-adding Disqus support ([9e7a701](https://github.com/haysclark/gatsby-starter-casper/commit/9e7a701)), closes [#9](https://github.com/haysclark/gatsby-starter-casper/issues/9)
+
+
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.2...v1.0.3) (2018-01-10)
 
