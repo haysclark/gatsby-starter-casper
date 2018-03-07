@@ -169,6 +169,16 @@ npm run develop # or gatsby develop
 
  WARNING: Make sure to edit `static/robots.txt` to include your domain for the sitemap!
 
+## Content
+
+### Posts
+
+Posts are authored using Markdown and include some optional YAML frontmatter data properties.  Each post should have a separate folder for the .md file in addition to any images or other media related to that post.  Posts are stored in a subfolder in the ```/content/``` directory; the target subfolder is set by the _blogPostDir_ property in _SiteConfig.js_.
+
+### Authors
+
+Each post can reference the author of the post, if the author is not set the default author will be used; which is controlled by the _blogAuthorId_ property in _SiteConfig.js_.  All authors, including the default author (aka _blodAuthorId_) must have an author JSON file.  These JSON files MUST be stored in a folder names ```authors```, for Gatsby to parse them correctly.  The location of this ```authors``` folder can be controlled by the _blogAuthorDir_ property in _SiteConfig.js_. It IS possible to have the ```authors``` folder inside the  _blogPostDir_ folder.
+
 ## Contributing
 
 👍🎉 First off, thanks for taking the time to contribute! 🎉👍
