@@ -2,7 +2,7 @@
 title: "Bold Mage"
 cover: "https://unsplash.it/1280/500/?random?BoldMage"
 author: "guinevere"
-date: "01/01/2017"
+date: "2017-01-01"
 category: "tech"
 tags:
     - programming
