@@ -53,7 +53,7 @@ More information in the [announcement](https://www.gatsbyjs.org/blog/gatsby-firs
 * Google Analytics support
 * NPM scripts for GitHub Pages deployment
 * Social features (uncomment code to use)
-  * Twitter tweet button 
+  * Twitter tweet button
   * Facebook share/share count
   * Google+ share button
   * easily to add more!
@@ -84,18 +84,15 @@ Install this starter (assuming [Gatsby](https://github.com/gatsbyjs/gatsby/) is 
 
 ```sh
 gatsby new YourProjectName https://github.com/haysclark/gatsby-starter-casper
-npm install # or yarn install
-npm run develop # or gatsby develop
+gatsby develop
 ```
 
-Or you can fork the project, make your changes there and merge new features when needed.
-
-Alternatively:
+Alternatively, you can clone the repo or a fork of the repo and install it manually.
 
 ```sh
 git clone https://github.com/haysclark/gatsby-starter-casper YourProjectName # Clone the project
 cd YourProjectname
-rm -rf .git # So you can have your own changes stored in VCS.
+rm -rf .git # Optional, you can leave the .git history for future rebasing
 npm install # or yarn install
 npm run develop # or gatsby develop
 ```
