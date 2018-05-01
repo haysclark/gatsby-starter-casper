@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.7"></a>
+## [1.0.7](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.6...v1.0.7) (2018-05-01)
+
+
+### Bug Fixes
+
+* adding yarn.lock to fix install issues ([f043bbc](https://github.com/haysclark/gatsby-starter-casper/commit/f043bbc)), closes [#21](https://github.com/haysclark/gatsby-starter-casper/issues/21)
+
+
+
 <a name="1.0.6"></a>
 ## [1.0.6](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.5...v1.0.6) (2018-04-25)
 
