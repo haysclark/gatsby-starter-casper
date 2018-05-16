@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import { withPrefix } from "gatsby-link";
 import "./MainHeader.css";
 
 class MainHeader extends React.Component {
@@ -12,7 +13,7 @@ class MainHeader extends React.Component {
 
     const getStyle = () => {
       if (cover) {
-        return { backgroundImage: `url("${cover}")` };
+        return { backgroundImage: `url("${withPrefix(cover)}")` };
       }
       return null;
     };
