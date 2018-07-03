@@ -39,7 +39,8 @@
     "react-scroll": "^1.7.3",
     "react-share": "^1.15.1",
     "react-social-icons": "^2.7.0",
-    "react-twitter-widgets": "^1.4.0"
+    "react-twitter-widgets": "^1.4.0",
+    "snyk": "^1.88.0"
   },
   "devDependencies": {
     "cli-glob": "^0.1.0",
@@ -80,11 +81,14 @@
     "lint:md": "remark content/posts/",
     "write-good": "write-good $(glob 'content/posts/**/*.md')",
     "format:js": "prettier '**/*.{js,jsx}' --write",
-    "release": "standard-version -a"
+    "release": "standard-version -a",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "remarkConfig": {
     "plugins": [
       "remark-preset-lint-recommended"
     ]
-  }
+  },
+  "snyk": true
 }
