@@ -62,7 +62,7 @@ class AuthorTemplate extends React.Component {
     const getAuthor = () => authorsEdges[0].node;
 
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <Drawer className="author-template" isOpen={this.state.menuOpen}>
           <Helmet title={`Posts by "${author}" | ${config.siteTitle}`} />
 

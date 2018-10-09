@@ -55,7 +55,7 @@ class TagTemplate extends React.Component {
     } = this.props.pathContext;
     const authorsEdges = this.props.data.authors.edges;
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <Drawer isOpen={this.state.menuOpen}>
           <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
 
