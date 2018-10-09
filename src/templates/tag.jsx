@@ -136,7 +136,7 @@ export const pageQuery = graphql`
     authors: allAuthorsJson {
       edges {
         node {
-          id
+          uid
           name
           image
           url
