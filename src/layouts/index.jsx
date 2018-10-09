@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 import "./index.css";
+import 'prismjs/themes/prism.css'
 
 export default class MainLayout extends React.Component {
   getLocalTitle() {
