@@ -10,7 +10,7 @@ class CategoryTemplate extends React.Component {
     const postEdges = this.props.data.allMarkdownRemark.edges;
     const authorsEdges = this.props.data.authors.edges;
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <div className="category-container">
           <Helmet
             title={`Posts in category "${category}" | ${config.siteTitle}`}

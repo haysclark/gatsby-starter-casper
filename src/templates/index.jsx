@@ -58,7 +58,7 @@ class IndexTemplate extends React.Component {
     const authorsEdges = this.props.data.authors.edges;
 
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <Drawer className="home-template" isOpen={this.state.menuOpen}>
           <Helmet title={config.siteTitle} />
           <SEO postEdges={nodes} />

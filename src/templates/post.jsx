@@ -86,7 +86,7 @@ class PostTemplate extends React.Component {
     const getPrevData = () => (prev ? formatReadNext(data.prev) : null);
 
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <Drawer className="post-template" isOpen={this.state.menuOpen}>
           <Helmet>
             <title>{`${post.title} | ${config.siteTitle}`}</title>
