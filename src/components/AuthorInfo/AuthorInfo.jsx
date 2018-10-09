@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "gatsby-link";
 import "./AuthorInfo.css";
-import AuthorMeta from "../../layouts/AuthorMeta/AuthorMeta";
+import AuthorMeta from "../../components/AuthorMeta/AuthorMeta";
 import AuthorLocation from "../AuthorLocation/AuthorLocation";
 import AuthorWebsite from "../AuthorWebsite/AuthorWebsite";
 import AuthorLink from "../AuthorLink/AuthorLink";
