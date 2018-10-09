@@ -23,6 +23,7 @@ import PostTags from "../components/PostTags/PostTags";
 import Footer from "../components/Footer/Footer";
 import AuthorModel from "../models/author-model";
 import Disqus from "../components/Disqus/Disqus";
+import Layout from "../components/layout";
 
 function parsePost(post, slug) {
   const result = post;
@@ -85,62 +86,64 @@ class PostTemplate extends React.Component {
     const getPrevData = () => (prev ? formatReadNext(data.prev) : null);
 
     return (
-      <Drawer className="post-template" isOpen={this.state.menuOpen}>
-        <Helmet>
-          <title>{`${post.title} | ${config.siteTitle}`}</title>
-        </Helmet>
-        <SEO postPath={slug} postNode={postNode} postSEO />
+      <Layout>
+        <Drawer className="post-template" isOpen={this.state.menuOpen}>
+          <Helmet>
+            <title>{`${post.title} | ${config.siteTitle}`}</title>
+          </Helmet>
+          <SEO postPath={slug} postNode={postNode} postSEO />
 
-        {/* The blog navigation links */}
-        <Navigation config={config} onClose={this.handleOnClose} />
+          {/* The blog navigation links */}
+          <Navigation config={config} onClose={this.handleOnClose} />
 
-        <SiteWrapper>
-          <MainHeader className="post-head" cover={cover}>
-            <MainNav>
-              <BlogLogo logo={config.siteLogo} title={config.siteTitle} />
-              <MenuButton
-                navigation={config.siteNavigation}
-                onClick={this.handleOnClick}
-              />
-            </MainNav>
-          </MainHeader>
-          <MainContent>
-            <PostFormatting className={className}>
-              <PostHeader>
-                <h1 className="post-title">{title}</h1>
-                <section className="post-meta">
-                  <PostDate date={date} />
-                  <PostTags prefix=" on " tags={tags} />
-                </section>
-              </PostHeader>
-
-              <section
-                className="post-content"
-                dangerouslySetInnerHTML={{ __html: postNode.html }}
-              />
-
-              <PostFooter>
-                <AuthorImage author={authorData} />
-                <AuthorInfo prefix="/author" author={authorData} />
-                <PostShare
-                  postNode={postNode}
-                  postPath={location.pathname}
-                  config={config}
+          <SiteWrapper>
+            <MainHeader className="post-head" cover={cover}>
+              <MainNav>
+                <BlogLogo logo={config.siteLogo} title={config.siteTitle} />
+                <MenuButton
+                  navigation={config.siteNavigation}
+                  onClick={this.handleOnClick}
                 />
-                <GhostSubscribe />
-                <Disqus postNode={postNode} />
-              </PostFooter>
-            </PostFormatting>
-          </MainContent>
-          <ReadNext next={getNextData()} prev={getPrevData()} />
+              </MainNav>
+            </MainHeader>
+            <MainContent>
+              <PostFormatting className={className}>
+                <PostHeader>
+                  <h1 className="post-title">{title}</h1>
+                  <section className="post-meta">
+                    <PostDate date={date} />
+                    <PostTags prefix=" on " tags={tags} />
+                  </section>
+                </PostHeader>
 
-          {/* The tiny footer at the very bottom */}
-          <Footer
-            copyright={config.copyright}
-            promoteGatsby={config.promoteGatsby}
-          />
-        </SiteWrapper>
-      </Drawer>
+                <section
+                  className="post-content"
+                  dangerouslySetInnerHTML={{ __html: postNode.html }}
+                />
+
+                <PostFooter>
+                  <AuthorImage author={authorData} />
+                  <AuthorInfo prefix="/author" author={authorData} />
+                  <PostShare
+                    postNode={postNode}
+                    postPath={location.pathname}
+                    config={config}
+                  />
+                  <GhostSubscribe />
+                  <Disqus postNode={postNode} />
+                </PostFooter>
+              </PostFormatting>
+            </MainContent>
+            <ReadNext next={getNextData()} prev={getPrevData()} />
+
+            {/* The tiny footer at the very bottom */}
+            <Footer
+              copyright={config.copyright}
+              promoteGatsby={config.promoteGatsby}
+            />
+          </SiteWrapper>
+        </Drawer>
+      </Layout>
     );
   }
 }
