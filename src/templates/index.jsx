@@ -55,7 +55,7 @@ class IndexTemplate extends React.Component {
       limit,
       prev,
       next
-    } = this.props.pathContext;
+    } = this.props.pageContext;
     const authorsEdges = this.props.data.authors.edges;
 
     return (

@@ -50,7 +50,7 @@ class AuthorTemplate extends React.Component {
   };
 
   render() {
-    const { author, cover } = this.props.pathContext;
+    const { author, cover } = this.props.pageContext;
     const postEdges =
       this.props.data.allMarkdownRemark &&
       this.props.data.allMarkdownRemark.edges

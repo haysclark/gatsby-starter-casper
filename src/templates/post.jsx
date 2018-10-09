@@ -73,7 +73,7 @@ class PostTemplate extends React.Component {
 
   render() {
     const { location, data } = this.props;
-    const { slug, next, prev } = this.props.pathContext;
+    const { slug, next, prev } = this.props.pageContext;
     const postNode = this.props.data.markdownRemark;
     const post = parsePost(postNode.frontmatter, slug);
     const { cover, title, date, author, tags } = post;
