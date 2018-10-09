@@ -135,10 +135,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    allAuthorsJson(filter: { id: { eq: $author } }) {
+    allAuthorsJson(filter: { uid: { eq: $author } }) {
       edges {
         node {
-          id
+          uid
           name
           image
           url

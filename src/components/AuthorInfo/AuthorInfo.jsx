@@ -21,8 +21,8 @@ const Bio = props => {
 class AuthorInfo extends React.Component {
   render() {
     const { prefix } = this.props;
-    const { id, name, image, bio, url, location } = this.props.author;
-    const authorInfoUrl = prefix ? `${prefix}/${id}` : id;
+    const { uid, name, image, bio, url, location } = this.props.author;
+    const authorInfoUrl = prefix ? `${prefix}/${uid}` : uid;
     if (image) {
       return (
         <section className="author">
