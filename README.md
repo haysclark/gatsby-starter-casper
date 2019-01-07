@@ -15,11 +15,15 @@ This starter also serves as example for the [Gatsby-Pagination](https://github.c
 
 ![Screenshot](docs/screenshot.png)
 
-## GatsbyJS V1
+## GatsbyJS V2
+This starter currently supports GatsbyJS version 2, which brings progressive web app features such as automatic code and data splitting (by route), prefetching, with service worker/offline-first support and PRPL pattern.
 
-This starter is based on GatsbyJS V1, which brings progressive web app features such as automatic code and data splitting (by route), prefetching, with service worker/offline-first support and PRPL pattern.
+> More information on Gatsby can be found [here](https://www.gatsbyjs.org/).
 
-More information in the [announcement](https://www.gatsbyjs.org/blog/gatsby-first-beta-release/).
+### GatsbyJS legacy support
+This project uses Semantic Versioning which align with major version of GatsbyJS. Thus, GatsbyJS v1 support can be found in 1.x.x releases of this starter, while GatsbyJS v2 support will be found in 2.x.x releases.
+
+> Special thanks to [hnspn](https://github.com/hnspn) for migration the project to support Gatsby v2. 🤘
 
 ## Features
 
