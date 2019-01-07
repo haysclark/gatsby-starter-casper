@@ -1,6 +1,6 @@
 ---
 title: "Bold Mage"
-cover: "https://unsplash.it/1280/500/?random?BoldMage"
+cover: "/images/hidden-beach-between-mountains-in-north-norway-picjumbo-com.jpg"
 author: "guinevere"
 date: "2017-01-01"
 category: "tech"
