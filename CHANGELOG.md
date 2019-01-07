@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.9"></a>
+## [1.0.9](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.8...v1.0.9) (2019-01-07)
+
+
+### Bug Fixes
+
+* The cover image url is not prefixed ([b226bf6](https://github.com/haysclark/gatsby-starter-casper/commit/b226bf6))
+
+
+
 <a name="1.0.8"></a>
 ## [1.0.8](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.7...v1.0.8) (2019-01-07)
 
