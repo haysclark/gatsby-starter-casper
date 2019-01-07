@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import "./AuthorInfo.css";
-import AuthorMeta from "../../components/AuthorMeta/AuthorMeta";
+import AuthorMeta from "../AuthorMeta/AuthorMeta";
 import AuthorLocation from "../AuthorLocation/AuthorLocation";
 import AuthorWebsite from "../AuthorWebsite/AuthorWebsite";
 import AuthorLink from "../AuthorLink/AuthorLink";
@@ -13,15 +13,19 @@ const Bio = props => {
   }
   return (
     <p>
-      Read <Link to={morePostsUrl}>more posts</Link> by this author.
+      Read
+      <Link to={morePostsUrl}>more posts</Link>
+      by this author.
     </p>
   );
 };
 
 class AuthorInfo extends React.Component {
   render() {
-    const { prefix } = this.props;
-    const { uid, name, image, bio, url, location } = this.props.author;
+    const {
+      prefix,
+      author: { uid, name, image, bio, url, location }
+    } = this.props;
     const authorInfoUrl = prefix ? `${prefix}/${uid}` : uid;
     if (image) {
       return (

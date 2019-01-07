@@ -1,7 +1,7 @@
 /* list of author links - location / url */
 .author-meta {
     padding: 0;
-    margin: 0;
+    margin: 1.6rem 0;
     list-style: none;
     font-size: 1.4rem;
     line-height: 1;
@@ -11,14 +11,11 @@
 
 .author-meta a {
     color: #9eabb3;
+    text-decoration: none;
 }
 
 .author-meta a:hover {
     color: #111;
-}
-
-.author-meta {
-    margin: 1.6rem 0;
 }
 
 /* Location, website, and link */
@@ -33,10 +30,6 @@
     display: inline-block;
     margin: 0 2rem 1rem 0;
     word-wrap: break-word;
-}
-
-.author-meta a {
-    text-decoration: none;
 }
 
 /* Turn off meta for page2+ to make room for extra

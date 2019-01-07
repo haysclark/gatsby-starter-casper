@@ -4,9 +4,8 @@ import "./MainContent.css";
 
 class MainContent extends React.Component {
   render() {
-    const { children } = this.props;
-
-    const classes = classNames("content", this.props.className);
+    const { children, className } = this.props;
+    const classes = classNames("content", className);
 
     return (
       <main id="content" className={classes} role="main">

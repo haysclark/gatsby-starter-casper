@@ -22,8 +22,9 @@ class TagTemplate extends React.Component {
   };
 
   handleOnClick = evt => {
+    const { menuOpen } = this.state;
     evt.stopPropagation();
-    if (this.state.menuOpen) {
+    if (menuOpen) {
       this.closeMenu();
     } else {
       this.openMenu();
@@ -45,19 +46,15 @@ class TagTemplate extends React.Component {
 
   render() {
     const {
-      tag,
-      nodes,
-      page,
-      pages,
-      total,
-      limit,
-      prev,
-      next
-    } = this.props.pageContext;
-    const authorsEdges = this.props.data.authors.edges;
+      location,
+      data: { authors },
+      pageContext: { tag, page, pages, total, limit, prev, next }
+    } = this.props;
+    const { menuOpen } = this.state;
+
     return (
-      <Layout location={this.props.location}>
-        <Drawer isOpen={this.state.menuOpen}>
+      <Layout location={location}>
+        <Drawer isOpen={menuOpen}>
           <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
 
           {/* The blog navigation links */}
@@ -93,7 +90,7 @@ class TagTemplate extends React.Component {
                 next={next}
               >
                 {/* PostListing component renders all the posts */}
-                <PostListing postEdges={nodes} postAuthors={authorsEdges} />
+                <PostListing postEdges={nodes} postAuthors={authors.edges} />
               </PaginatedContent>
             </div>
             {/* The tiny footer at the very bottom */}

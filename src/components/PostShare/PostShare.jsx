@@ -31,14 +31,14 @@ class PostShare extends React.Component {
         <h4>Share this post</h4>
         <div style={{ display: "flex" }}>
           <TwitterShareButton url={url} title={post.title}>
-            <a className="icon-twitter" style={{ fontSize: "1.4em" }}>
-              <span className="hidden">Twitter</span>
-            </a>
+            {/* <a className="icon-twitter" style={{ fontSize: "1.4em" }} href="https://twitter.com/"> */}
+            <span className="hidden">Twitter</span>
+            {/* </a> */}
           </TwitterShareButton>
           <FacebookShareButton url={url} quote={post.title}>
-            <a className="icon-facebook" style={{ fontSize: "1.4em" }}>
-              <span className="hidden">Facebook</span>
-            </a>
+            {/* <a className="icon-facebook" style={{ fontSize: "1.4em" }} href="https://facebook.com/"> */}
+            <span className="hidden">Facebook</span>
+            {/* </a> */}
           </FacebookShareButton>
           {/* <PinterestShareButton */}
           {/* url={url} */}
@@ -54,9 +54,9 @@ class PostShare extends React.Component {
           {/* </a> */}
           {/* </PinterestShareButton> */}
           <GooglePlusShareButton url={url}>
-            <a className="icon-google-plus" style={{ fontSize: "1.4em" }}>
-              <span className="hidden">Google+</span>
-            </a>
+            {/* <a className="icon-google-plus" style={{ fontSize: "1.4em" }} href="https://google.com/"> */}
+            <span className="hidden">Google+</span>
+            {/* </a> */}
           </GooglePlusShareButton>
         </div>
       </section>
