@@ -30,18 +30,18 @@
     text-decoration: none;
 }
 
-/* Possibly not the right home for this, make sure to move sized versions as well */
-h1:not(.post-template) .post-title {
-    font-size: 3.6rem;
+.post-template .post-title,
+.page-template .post-title {
+    margin-bottom: 0;
 }
 
 div.page-template .post-title {
     font-size: 5rem;
 }
 
-.post-template .post-title,
-.page-template .post-title {
-    margin-bottom: 0;
+/* Possibly not the right home for this, make sure to move sized versions as well */
+h1:not(.post-template) .post-title {
+    font-size: 3.6rem;
 }
 
 .post-excerpt p {

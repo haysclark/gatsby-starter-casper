@@ -1,6 +1,6 @@
 import React from "react";
 import MainContent from "../MainContent/MainContent";
-import Pagination from "../../components/Pagination/Pagination";
+import Pagination from "../Pagination/Pagination";
 import "./PaginatedContent.css";
 
 class PaginatedContent extends React.Component {

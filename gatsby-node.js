@@ -2,14 +2,14 @@ const path = require("path");
 const _ = require("lodash");
 const fs = require("fs");
 const webpackLodashPlugin = require("lodash-webpack-plugin");
-const siteConfig = require("./data/SiteConfig");
 const {
-  createPaginationPages,
-  createLinkedPages
+  createLinkedPages,
+  createPaginationPages
 } = require("gatsby-pagination");
+const siteConfig = require("./data/SiteConfig");
 
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
   let slug;
   if (node.internal.type === "MarkdownRemark") {
     const fileNode = getNode(node.parent);
@@ -35,8 +35,8 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   }
 };
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
     const indexPage = path.resolve("src/templates/index.jsx");
@@ -51,7 +51,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       )
     ) {
       reject(
-        "The 'authors' folder is missing within the 'blogAuthorDir' folder."
+        new Error(
+          "The 'authors' folder is missing within the 'blogAuthorDir' folder."
+        )
       );
     }
 
@@ -181,9 +183,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     );
   });
 };
-
-exports.modifyWebpackConfig = ({ config, stage }) => {
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
   if (stage === "build-javascript") {
-    config.plugin("Lodash", webpackLodashPlugin, null);
+    actions.setWebpackConfig({
+      plugins: [webpackLodashPlugin]
+    });
   }
 };

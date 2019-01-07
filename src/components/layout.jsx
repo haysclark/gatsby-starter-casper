@@ -3,7 +3,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import "prismjs/themes/prism.css";
 import config from "../../data/SiteConfig";
-import "./index.css";
+import "./layout.css";
 
 export default class MainLayout extends React.Component {
   getLocalTitle() {
@@ -11,9 +11,10 @@ export default class MainLayout extends React.Component {
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
     const pathPrefix = config.pathPrefix ? config.pathPrefix : "/";
-    const currentPath = this.props.location.pathname
-      .replace(pathPrefix, "")
-      .replace("/", "");
+    const {
+      location: { pathname }
+    } = this.props;
+    const currentPath = pathname.replace(pathPrefix, "").replace("/", "");
     let title = "";
     if (currentPath === "") {
       title = "Home";
@@ -40,6 +41,7 @@ export default class MainLayout extends React.Component {
     }
     return title;
   }
+
   render() {
     const { children } = this.props;
     return (
@@ -48,7 +50,7 @@ export default class MainLayout extends React.Component {
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        {children()}
+        {children}
       </div>
     );
   }

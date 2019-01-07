@@ -1,21 +1,23 @@
+import { graphql } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
 import { Link } from "react-scroll";
 import PostListing from "../components/PostListing/PostListing";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
-import Drawer from "../layouts/Drawer/Drawer";
+import Drawer from "../components/Drawer/Drawer";
 import Navigation from "../components/Navigation/Navigation";
-import SiteWrapper from "../layouts/SiteWrapper/SiteWrapper";
+import SiteWrapper from "../components/SiteWrapper/SiteWrapper";
 import Footer from "../components/Footer/Footer";
-import MainHeader from "../layouts/MainHeader/MainHeader";
-import MainNav from "../layouts/MainNav/MainNav";
+import MainHeader from "../components/MainHeader/MainHeader";
+import MainNav from "../components/MainNav/MainNav";
 import BlogLogo from "../components/BlogLogo/BlogLogo";
 import MenuButton from "../components/MenuButton/MenuButton";
 import PageTitle from "../components/PageTitle/PageTitle";
 import PageDescription from "../components/PageDescription/PageDescription";
-import PaginatedContent from "../layouts/PaginatedContent/PaginatedContent";
+import PaginatedContent from "../components/PaginatedContent/PaginatedContent";
 import SocialMediaIcons from "../components/SocialMediaIcons/SocialMediaIcons";
+import Layout from "../components/layout";
 
 class IndexTemplate extends React.Component {
   state = {
@@ -23,8 +25,9 @@ class IndexTemplate extends React.Component {
   };
 
   handleOnClick = evt => {
+    const { menuOpen } = this.state;
     evt.stopPropagation();
-    if (this.state.menuOpen) {
+    if (menuOpen) {
       this.closeMenu();
     } else {
       this.openMenu();
@@ -46,78 +49,76 @@ class IndexTemplate extends React.Component {
 
   render() {
     const {
-      nodes,
-      page,
-      pages,
-      total,
-      limit,
-      prev,
-      next
-    } = this.props.pathContext;
-    const authorsEdges = this.props.data.authors.edges;
+      location,
+      pageContext: { nodes, page, pages, total, limit, prev, next },
+      data: { authors }
+    } = this.props;
+    const { menuOpen } = this.state;
 
     return (
-      <Drawer className="home-template" isOpen={this.state.menuOpen}>
-        <Helmet title={config.siteTitle} />
-        <SEO postEdges={nodes} />
+      <Layout location={location}>
+        <Drawer className="home-template" isOpen={menuOpen}>
+          <Helmet title={config.siteTitle} />
+          <SEO postEdges={nodes} />
 
-        {/* The blog navigation links */}
-        <Navigation config={config} onClose={this.handleOnClose} />
+          {/* The blog navigation links */}
+          <Navigation config={config} onClose={this.handleOnClose} />
 
-        <SiteWrapper>
-          {/* All the main content gets inserted here */}
-          <div className="home-template">
-            {/* The big featured header */}
-            <MainHeader cover={config.siteCover}>
-              <MainNav overlay={config.siteCover}>
-                <BlogLogo logo={config.siteLogo} title={config.siteTitle} />
-                <MenuButton
-                  navigation={config.siteNavigation}
-                  onClick={this.handleOnClick}
-                />
-              </MainNav>
-              <div className="vertical">
-                <div className="main-header-content inner">
-                  <PageTitle text={config.siteTitle} />
-                  <PageDescription text={config.siteDescription} />
-                  <SocialMediaIcons
-                    urls={config.siteSocialUrls}
-                    color="currentColor"
+          <SiteWrapper>
+            {/* All the main content gets inserted here */}
+            <div className="home-template">
+              {/* The big featured header */}
+              <MainHeader cover={config.siteCover}>
+                <MainNav overlay={config.siteCover}>
+                  <BlogLogo logo={config.siteLogo} title={config.siteTitle} />
+                  <MenuButton
+                    navigation={config.siteNavigation}
+                    onClick={this.handleOnClick}
                   />
+                </MainNav>
+                <div className="vertical">
+                  <div className="main-header-content inner">
+                    <PageTitle text={config.siteTitle} />
+                    <PageDescription text={config.siteDescription} />
+                    <SocialMediaIcons
+                      urls={config.siteSocialUrls}
+                      color="currentColor"
+                    />
+                  </div>
                 </div>
-              </div>
-              <Link
-                className="scroll-down icon-arrow-left"
-                to="content"
-                data-offset="-45"
-                spy
-                smooth
-                duration={500}
+                <Link
+                  className="scroll-down icon-arrow-left"
+                  to="content"
+                  data-offset="-45"
+                  spy
+                  smooth
+                  duration={500}
+                >
+                  <span className="hidden">Scroll Down</span>
+                </Link>
+              </MainHeader>
+
+              <PaginatedContent
+                page={page}
+                pages={pages}
+                total={total}
+                limit={limit}
+                prev={prev}
+                next={next}
               >
-                <span className="hidden">Scroll Down</span>
-              </Link>
-            </MainHeader>
+                {/* PostListing component renders all the posts */}
+                <PostListing postEdges={nodes} postAuthors={authors.edges} />
+              </PaginatedContent>
+            </div>
 
-            <PaginatedContent
-              page={page}
-              pages={pages}
-              total={total}
-              limit={limit}
-              prev={prev}
-              next={next}
-            >
-              {/* PostListing component renders all the posts */}
-              <PostListing postEdges={nodes} postAuthors={authorsEdges} />
-            </PaginatedContent>
-          </div>
-
-          {/* The tiny footer at the very bottom */}
-          <Footer
-            copyright={config.copyright}
-            promoteGatsby={config.promoteGatsby}
-          />
-        </SiteWrapper>
-      </Drawer>
+            {/* The tiny footer at the very bottom */}
+            <Footer
+              copyright={config.copyright}
+              promoteGatsby={config.promoteGatsby}
+            />
+          </SiteWrapper>
+        </Drawer>
+      </Layout>
     );
   }
 }
@@ -130,7 +131,7 @@ export const pageQuery = graphql`
     authors: allAuthorsJson {
       edges {
         node {
-          id
+          uid
           name
           image
           url

@@ -159,10 +159,10 @@
     color: #b8b8b8;
 }
 
-.nav li.nav-current a,
 .nav a:hover,
 .nav a:active,
-.nav a:focus {
+.nav a:focus,
+.nav li.nav-current a {
     color: #fff;
 }
 

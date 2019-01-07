@@ -1,5 +1,5 @@
 {
-  "id": "casper",
+  "uid": "casper",
   "name": "Casper User",
   "image": "https://api.adorable.io/avatars/150/test.png",
   "url": "http://gatsbyjs.org/",

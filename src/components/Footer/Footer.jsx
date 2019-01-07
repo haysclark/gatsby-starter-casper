@@ -8,20 +8,26 @@ class Footer extends Component {
       if (show) {
         return (
           <section className="poweredby">
-            Proudly published with <a href="https://gatsbyjs.org">Gatsby</a>
+            {"Proudly published with "}
+            <a href="https://gatsbyjs.org">Gatsby</a>
           </section>
         );
       }
       return null;
     };
 
-    const { promoteGatsby } = this.props;
-    const { label, url, year } = this.props.copyright;
+    const {
+      promoteGatsby,
+      copyright: { label, url, year }
+    } = this.props;
+    const date = year || new Date().getFullYear();
     return (
       <footer className="site-footer clearfix">
         <section className="copyright">
-          <a href={url || "/"}>{label}</a> &copy;{" "}
-          {year || new Date().getFullYear()}
+          <a href={url || "/"}>{`${label}`}</a>
+          {` `}
+          &copy;
+          {`${date}`}
         </section>
         <PoweredBy show={promoteGatsby} />
       </footer>

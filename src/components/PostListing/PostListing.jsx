@@ -1,11 +1,11 @@
 import React from "react";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import AuthorThumbnail from "../AuthorThumbnail/AuthorThumbnail";
 import PostTags from "../PostTags/PostTags";
 import SiteConfig from "../../../data/SiteConfig";
 import AuthorLink from "../AuthorLink/AuthorLink";
-import PostFormatting from "../../layouts/PostFormatting/PostFormatting";
-import PostHeader from "../../layouts/PostHeader/PostHeader";
+import PostFormatting from "../PostFormatting/PostFormatting";
+import PostHeader from "../PostHeader/PostHeader";
 import PostDate from "../PostDate/PostDate";
 import AuthorModel from "../../models/author-model";
 import "./PostListing.css";
@@ -28,7 +28,8 @@ const getPostList = (postEdges, authorEdges) =>
 
 class PostListing extends React.Component {
   render() {
-    const postList = getPostList(this.props.postEdges, this.props.postAuthors);
+    const { postEdges, postAuthors } = this.props;
+    const postList = getPostList(postEdges, postAuthors);
 
     return (
       <div>
@@ -47,7 +48,7 @@ class PostListing extends React.Component {
               <section className="post-excerpt">
                 {/* TODO limit excerpt to 26 words */}
                 <p>
-                  {excerpt}{" "}
+                  {`${excerpt} `}
                   <Link className="read-more" to={path}>
                     &raquo;
                   </Link>
@@ -55,7 +56,7 @@ class PostListing extends React.Component {
               </section>
               <footer className="post-meta">
                 <AuthorThumbnail avatar={author.image} name={author.name} />
-                <AuthorLink url={`/author/${author.id}`} name={author.name} />
+                <AuthorLink url={`/author/${author.uid}`} name={author.name} />
                 <PostTags prefix=" on " tags={tags} />
                 <PostDate date={date} />
               </footer>

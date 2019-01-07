@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import "./Author.css";
 
 const Bio = props => {
@@ -9,7 +9,9 @@ const Bio = props => {
   }
   return (
     <p>
-      Read <Link to="/">more posts</Link> by this author.
+      Read
+      <Link to="/">more posts</Link>
+      by this author.
     </p>
   );
 };

@@ -13,14 +13,17 @@ class Disqus extends Component {
   }
 
   onSnackbarDismiss() {
-    const [, ...toasts] = this.state.toasts;
-    this.setState({ toasts });
+    const { toasts } = this.state;
+    this.setState({ toasts: toasts.slice(1) });
   }
+
   notifyAboutComment() {
-    const toasts = this.state.toasts.slice();
-    toasts.push({ text: "New comment available!" });
-    this.setState({ toasts });
+    const { toasts } = this.state;
+    const newToasts = toasts.concat();
+    newToasts.push({ text: "New comment available!" });
+    this.setState({ toasts: newToasts });
   }
+
   render() {
     const { postNode } = this.props;
     if (!config.disqusShortname) {
