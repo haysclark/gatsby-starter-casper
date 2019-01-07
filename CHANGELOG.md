@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.8"></a>
+## [1.0.8](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.7...v1.0.8) (2019-01-07)
+
+
+### Bug Fixes
+
+* Adding local image for post cover example ([49ddc01](https://github.com/haysclark/gatsby-starter-casper/commit/49ddc01)), closes [#17](https://github.com/haysclark/gatsby-starter-casper/issues/17)
+* ignoring linting error ([b41908f](https://github.com/haysclark/gatsby-starter-casper/commit/b41908f))
+
+
+
 <a name="1.0.7"></a>
 ## [1.0.7](https://github.com/haysclark/gatsby-starter-casper/compare/v1.0.6...v1.0.7) (2018-05-01)
 
