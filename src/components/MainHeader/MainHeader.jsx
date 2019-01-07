@@ -4,12 +4,10 @@ import "./MainHeader.css";
 
 class MainHeader extends React.Component {
   render() {
-    const { children, cover } = this.props;
-
-    const classes = classNames("main-header", this.props.className, {
+    const { children, cover, className } = this.props;
+    const classes = classNames("main-header", className, {
       "no-cover": !cover
     });
-
     const getStyle = () => {
       if (cover) {
         return { backgroundImage: `url("${cover}")` };

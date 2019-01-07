@@ -25,8 +25,9 @@ class IndexTemplate extends React.Component {
   };
 
   handleOnClick = evt => {
+    const { menuOpen } = this.state;
     evt.stopPropagation();
-    if (this.state.menuOpen) {
+    if (menuOpen) {
       this.closeMenu();
     } else {
       this.openMenu();
@@ -48,19 +49,15 @@ class IndexTemplate extends React.Component {
 
   render() {
     const {
-      nodes,
-      page,
-      pages,
-      total,
-      limit,
-      prev,
-      next
-    } = this.props.pageContext;
-    const authorsEdges = this.props.data.authors.edges;
+      location,
+      pageContext: { nodes, page, pages, total, limit, prev, next },
+      data: { authors }
+    } = this.props;
+    const { menuOpen } = this.state;
 
     return (
-      <Layout location={this.props.location}>
-        <Drawer className="home-template" isOpen={this.state.menuOpen}>
+      <Layout location={location}>
+        <Drawer className="home-template" isOpen={menuOpen}>
           <Helmet title={config.siteTitle} />
           <SEO postEdges={nodes} />
 
@@ -110,7 +107,7 @@ class IndexTemplate extends React.Component {
                 next={next}
               >
                 {/* PostListing component renders all the posts */}
-                <PostListing postEdges={nodes} postAuthors={authorsEdges} />
+                <PostListing postEdges={nodes} postAuthors={authors.edges} />
               </PaginatedContent>
             </div>
 

@@ -2,11 +2,11 @@ const path = require("path");
 const _ = require("lodash");
 const fs = require("fs");
 const webpackLodashPlugin = require("lodash-webpack-plugin");
-const siteConfig = require("./data/SiteConfig");
 const {
-  createPaginationPages,
-  createLinkedPages
+  createLinkedPages,
+  createPaginationPages
 } = require("gatsby-pagination");
+const siteConfig = require("./data/SiteConfig");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
@@ -51,7 +51,9 @@ exports.createPages = ({ graphql, actions }) => {
       )
     ) {
       reject(
-        "The 'authors' folder is missing within the 'blogAuthorDir' folder."
+        new Error(
+          "The 'authors' folder is missing within the 'blogAuthorDir' folder."
+        )
       );
     }
 
@@ -184,7 +186,7 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   if (stage === "build-javascript") {
     actions.setWebpackConfig({
-      plugins: [webpackLodashPlugin],
-    })
+      plugins: [webpackLodashPlugin]
+    });
   }
 };

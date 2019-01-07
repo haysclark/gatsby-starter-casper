@@ -5,32 +5,35 @@ import config from "../../../data/SiteConfig";
 class SEO extends Component {
   render() {
     const { postNode, postPath, postSEO } = this.props;
-    let title;
-    let description;
-    let image;
+
+    let postTitle;
+    let postDescription;
+    let postImage;
     let postURL;
+
     if (postSEO) {
       const postMeta = postNode.frontmatter;
-      title = postMeta.title;
-      description = postMeta.description
+      postTitle = postMeta.title;
+      postDescription = postMeta.description
         ? postMeta.description
         : postNode.excerpt;
-      image = postMeta.cover;
+      postImage = postMeta.cover;
       postURL = config.siteUrl + config.pathPrefix + postPath;
     } else {
-      title = config.siteTitle;
-      description = config.siteDescription;
-      image = config.siteLogo;
+      postTitle = config.siteTitle;
+      postDescription = config.siteDescription;
+      postImage = config.siteLogo;
     }
+
     const realPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
-    image = config.siteUrl + realPrefix + image;
+    postImage = config.siteUrl + realPrefix + postImage;
     const blogURL = config.siteUrl + config.pathPrefix;
     const schemaOrgJSONLD = [
       {
         "@context": "http://schema.org",
         "@type": "WebSite",
         url: blogURL,
-        name: title,
+        name: postTitle,
         alternateName: config.siteTitleAlt ? config.siteTitleAlt : ""
       }
     ];
@@ -45,8 +48,8 @@ class SEO extends Component {
               position: 1,
               item: {
                 "@id": postURL,
-                name: title,
-                image
+                name: postTitle,
+                image: postImage
               }
             }
           ]
@@ -55,22 +58,22 @@ class SEO extends Component {
           "@context": "http://schema.org",
           "@type": "BlogPosting",
           url: blogURL,
-          name: title,
+          name: postTitle,
           alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
-          headline: title,
+          headline: postTitle,
           image: {
             "@type": "ImageObject",
-            url: image
+            url: postImage
           },
-          description
+          description: postDescription
         }
       ]);
     }
     return (
       <Helmet>
         {/* General tags */}
-        <meta name="description" content={description} />
-        <meta name="image" content={image} />
+        <meta name="description" content={postDescription} />
+        <meta name="image" content={postImage} />
 
         {/* Schema.org tags */}
         <script type="application/ld+json">
@@ -80,9 +83,9 @@ class SEO extends Component {
         {/* OpenGraph tags */}
         <meta property="og:url" content={postSEO ? postURL : blogURL} />
         {postSEO ? <meta property="og:type" content="article" /> : null}
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
+        <meta property="og:title" content={postTitle} />
+        <meta property="og:description" content={postDescription} />
+        <meta property="og:image" content={postImage} />
         <meta
           property="fb:app_id"
           content={config.siteFBAppID ? config.siteFBAppID : ""}
@@ -94,9 +97,9 @@ class SEO extends Component {
           name="twitter:creator"
           content={config.userTwitter ? config.userTwitter : ""}
         />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} />
+        <meta name="twitter:title" content={postTitle} />
+        <meta name="twitter:description" content={postDescription} />
+        <meta name="twitter:image" content={postImage} />
       </Helmet>
     );
   }

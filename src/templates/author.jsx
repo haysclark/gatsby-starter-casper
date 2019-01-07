@@ -28,8 +28,9 @@ class AuthorTemplate extends React.Component {
   };
 
   handleOnClick = evt => {
+    const { menuOpen } = this.state;
     evt.stopPropagation();
-    if (this.state.menuOpen) {
+    if (menuOpen) {
       this.closeMenu();
     } else {
       this.openMenu();
@@ -50,21 +51,24 @@ class AuthorTemplate extends React.Component {
   };
 
   render() {
-    const { author, cover } = this.props.pageContext;
+    const {
+      location,
+      data: { allMarkdownRemark, allAuthorsJson },
+      pageContext: { author, cover }
+    } = this.props;
+    const { menuOpen } = this.state;
+
     const postEdges =
-      this.props.data.allMarkdownRemark &&
-      this.props.data.allMarkdownRemark.edges
-        ? this.props.data.allMarkdownRemark.edges
+      allMarkdownRemark && allMarkdownRemark.edges
+        ? allMarkdownRemark.edges
         : [];
     const authorsEdges =
-      this.props.data.allAuthorsJson && this.props.data.allAuthorsJson.edges
-        ? this.props.data.allAuthorsJson.edges
-        : [];
+      allAuthorsJson && allAuthorsJson.edges ? allAuthorsJson.edges : [];
     const getAuthor = () => authorsEdges[0].node;
 
     return (
-      <Layout location={this.props.location}>
-        <Drawer className="author-template" isOpen={this.state.menuOpen}>
+      <Layout location={location}>
+        <Drawer className="author-template" isOpen={menuOpen}>
           <Helmet title={`Posts by "${author}" | ${config.siteTitle}`} />
 
           {/* The blog navigation links */}

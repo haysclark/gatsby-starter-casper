@@ -4,23 +4,16 @@ import "./PaginationLink.css";
 
 class PaginationLink extends React.Component {
   render() {
-    if (this.props.url) {
-      let className = "nav-link";
-      if (this.props.className) {
-        className = `${className} ${this.props.className}`;
-      }
-
+    const { url, text, className, ...rest } = this.props;
+    if (url) {
+      const classNames = className ? `nav-link ${className}` : `nav-link`;
       // Clone this.props and then delete Component specific
       // props so we can spread the rest into the img.
-      const { ...rest } = this.props;
       delete rest.style;
-      delete rest.className;
-      delete rest.text;
-      delete rest.url;
 
       return (
-        <Link to={this.props.url} {...rest} className={className}>
-          {this.props.text}
+        <Link to={url} className={classNames} {...rest}>
+          {text}
         </Link>
       );
     }

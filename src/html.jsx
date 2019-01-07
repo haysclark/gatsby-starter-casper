@@ -17,6 +17,7 @@ if (process.env.NODE_ENV === "production") {
 
 export default class HTML extends React.Component {
   render() {
+    const { headComponents, body, postBodyComponents } = this.props;
     let css;
     if (process.env.NODE_ENV === "production") {
       css = (
@@ -49,16 +50,13 @@ export default class HTML extends React.Component {
             href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400"
           />
 
-          {this.props.headComponents}
+          {headComponents}
           <link rel="shortcut icon" href={favicon} />
           {css}
         </head>
         <body>
-          <div
-            id="___gatsby"
-            dangerouslySetInnerHTML={{ __html: this.props.body }}
-          />
-          {this.props.postBodyComponents}
+          <div id="___gatsby" dangerouslySetInnerHTML={{ __html: body }} />
+          {postBodyComponents}
         </body>
       </html>
     );
