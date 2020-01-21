@@ -24,7 +24,7 @@
     "gatsby-remark-images": "^2.0.4",
     "gatsby-remark-prismjs": "^3.0.1",
     "gatsby-remark-responsive-iframe": "^2.0.5",
-    "gatsby-source-filesystem": "^2.0.3",
+    "gatsby-source-filesystem": "^2.0.22",
     "gatsby-transformer-json": "^2.1.4",
     "gatsby-transformer-remark": "^2.1.7",
     "lodash": "^4.17.11",
